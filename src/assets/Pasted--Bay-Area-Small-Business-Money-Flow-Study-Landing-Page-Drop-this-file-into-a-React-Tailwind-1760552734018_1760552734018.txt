@@ -1,0 +1,222 @@
+// Bay Area Small Business Money Flow Study – Landing Page
+// Drop this file into a React + Tailwind project (e.g., Vite on Replit)
+// Tailwind: be sure your project is set up (postcss + tailwind config). 
+// Replace TYPEFORM_URL with your real Typeform link.
+
+import { useEffect } from "react";
+
+const TYPEFORM_URL = "https://form.typeform.com/to/your-typeform-id"; // <-- replace
+
+export default function BayAreaStudyLanding() {
+  useEffect(() => {
+    // Optional: smooth scroll behavior for in-page anchors
+    if (typeof window !== "undefined") {
+      document.documentElement.style.scrollBehavior = "smooth";
+    }
+  }, []);
+
+  return (
+    <div className="min-h-screen bg-[#0b1220] text-white">
+      {/* NAV */}
+      <header className="sticky top-0 z-30 backdrop-blur supports-[backdrop-filter]:bg-white/5 bg-white/0 border-b border-white/10">
+        <div className="mx-auto max-w-6xl px-4 py-3 flex items-center justify-between">
+          <a href="#top" className="font-semibold tracking-tight text-white/90 hover:text-white">
+            Bay Area Small Business Money Flow Study
+          </a>
+          <nav className="hidden md:flex gap-6 text-sm text-white/70">
+            <a href="#why" className="hover:text-white">Why</a>
+            <a href="#about" className="hover:text-white">What</a>
+            <a href="#who" className="hover:text-white">Who</a>
+            <a href="#join" className="hover:text-white">Join</a>
+            <a href="#faq" className="hover:text-white">FAQ</a>
+          </nav>
+          <a
+            href="#join"
+            className="inline-flex items-center rounded-xl bg-white text-[#0b1220] px-4 py-2 text-sm font-semibold shadow-lg hover:shadow-white/10 hover:opacity-95"
+          >
+            Join the Study
+          </a>
+        </div>
+      </header>
+
+      {/* HERO */}
+      <section id="top" className="relative overflow-hidden">
+        <div className="absolute inset-0 -z-10 opacity-20 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-sky-400/60 via-indigo-400/30 to-transparent" />
+        <div className="mx-auto max-w-6xl px-4 pt-16 pb-10 md:pb-16">
+          <div className="max-w-3xl">
+            <h1 className="text-3xl md:text-5xl font-extrabold leading-tight">
+              A local, community-first research initiative for Bay Area small businesses
+            </h1>
+            <p className="mt-4 text-white/80 md:text-lg">
+              We’re talking with owners and managers about how they keep money moving — paying suppliers and staff, 
+              collecting revenue, and staying on top of cash flow. No selling. Just listening and learning.
+            </p>
+            <div className="mt-8 flex flex-col sm:flex-row gap-3">
+              <a
+                href="#join"
+                className="inline-flex items-center justify-center rounded-2xl bg-white text-[#0b1220] px-6 py-3 font-semibold shadow-lg hover:shadow-white/10"
+              >
+                Join the Study
+              </a>
+              <a
+                href="#why"
+                className="inline-flex items-center justify-center rounded-2xl border border-white/20 px-6 py-3 font-semibold text-white/90 hover:bg-white/5"
+              >
+                Learn More
+              </a>
+            </div>
+            <p className="mt-5 text-sm text-white/70">
+              60-minute interview · Remote or in-person · $150 compensation · Confidential & local to the Bay Area
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* WHY */}
+      <section id="why" className="border-t border-white/10 bg-white/5">
+        <div className="mx-auto max-w-6xl px-4 py-14">
+          <div className="grid md:grid-cols-2 gap-10 items-start">
+            <div>
+              <h2 className="text-2xl md:text-3xl font-bold">Why we’re doing this</h2>
+              <p className="mt-4 text-white/80">
+                Running a small business here isn’t easy. Between chasing invoices, paying suppliers, managing payroll, 
+                and keeping up with taxes, financial operations can feel like a full-time job.
+              </p>
+              <p className="mt-3 text-white/80">
+                We’re mapping real, day-to-day workflows small businesses use to keep money moving — what works, what breaks, and what progress would actually help. 
+                This is independent research, not a product pitch.
+              </p>
+            </div>
+            <ul className="space-y-4 text-white/90">
+              {[
+                { t: "Honest conversations", d: "One-on-one chats focused on your existing process — tools, routines, workarounds, and pain points." },
+                { t: "Local focus", d: "Centering Bay Area businesses across SF, East Bay, Peninsula, South Bay, North Bay." },
+                { t: "Respect for your time", d: "60 minutes. $150 thank-you payment. Remote or optional in-person." },
+              ].map((item) => (
+                <li key={item.t} className="flex gap-3">
+                  <span className="mt-1 h-2.5 w-2.5 rounded-full bg-white/70" />
+                  <div>
+                    <p className="font-semibold">{item.t}</p>
+                    <p className="text-white/70 text-sm">{item.d}</p>
+                  </div>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      {/* WHAT */}
+      <section id="about" className="border-t border-white/10">
+        <div className="mx-auto max-w-6xl px-4 py-14">
+          <h2 className="text-2xl md:text-3xl font-bold">What participation involves</h2>
+          <div className="mt-8 grid gap-6 sm:grid-cols-3">
+            {[
+              { emoji: "🕒", title: "60 minutes", desc: "Remote on Zoom/Meet or in-person (SF, Oakland, Peninsula)." },
+              { emoji: "💬", title: "One-on-one", desc: "We’ll explore how you manage money in and out — no slides, no pitch." },
+              { emoji: "💵", title: "$150 thank-you", desc: "Paid after your interview for your time and expertise." },
+            ].map((c) => (
+              <div key={c.title} className="rounded-2xl border border-white/10 bg-white/5 p-6 shadow-xl shadow-black/20">
+                <div className="text-2xl" aria-hidden>{c.emoji}</div>
+                <h3 className="mt-3 font-semibold">{c.title}</h3>
+                <p className="mt-2 text-white/70 text-sm">{c.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* WHO */}
+      <section id="who" className="border-t border-white/10 bg-white/5">
+        <div className="mx-auto max-w-6xl px-4 py-14">
+          <h2 className="text-2xl md:text-3xl font-bold">Who we’d love to hear from</h2>
+          <p className="mt-3 text-white/80 max-w-3xl">
+            Owners, general managers, or finance/ops leads at California small businesses (ideally 2–100 employees) who handle
+            payments, invoices, payroll, taxes, or cash-flow tracking.
+          </p>
+          <div className="mt-8 grid gap-3 sm:grid-cols-2 md:grid-cols-3">
+            {[
+              "Restaurants & cafés",
+              "Retail & boutiques",
+              "Health & wellness studios",
+              "Trades & construction",
+              "Professional services",
+              "Local manufacturing",
+              "Creative & tech services",
+              "Nonprofits & community orgs",
+              "Other Bay Area SMBs",
+            ].map((tag) => (
+              <div key={tag} className="rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-white/80">
+                {tag}
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* JOIN / TYPEFORM */}
+      <section id="join" className="border-t border-white/10">
+        <div className="mx-auto max-w-6xl px-4 py-14">
+          <div className="flex flex-col md:flex-row gap-8 items-start">
+            <div className="md:w-1/2">
+              <h2 className="text-2xl md:text-3xl font-bold">Join the study</h2>
+              <p className="mt-3 text-white/80">
+                Fill a short form (2–3 minutes) to help us match you with an interview slot. Your answers are confidential
+                and used only for scheduling the research sessions.
+              </p>
+              <ul className="mt-6 space-y-3 text-white/80 text-sm">
+                <li>• Prefer remote? We’ll meet on Zoom or Google Meet.</li>
+                <li>• Prefer in-person? We can meet in SF, Oakland, or the Peninsula.</li>
+                <li>• You’ll receive a $150 thank-you after the interview.</li>
+              </ul>
+              <a
+                href={TYPEFORM_URL}
+                target="_blank"
+                rel="noreferrer"
+                className="mt-6 inline-flex items-center rounded-2xl bg-white text-[#0b1220] px-6 py-3 font-semibold shadow-lg hover:shadow-white/10"
+              >
+                Start the Form
+              </a>
+              <p className="mt-2 text-xs text-white/60">Opens in a new tab.</p>
+            </div>
+            <div className="md:w-1/2 w-full">
+              {/* If you prefer embedded Typeform, uncomment the iframe below and ensure X-Frame-Options allowlist. */}
+              <div className="aspect-[4/5] w-full overflow-hidden rounded-2xl border border-white/10 bg-white/5">
+                <iframe
+                  title="Typeform"
+                  src={TYPEFORM_URL}
+                  className="h-full w-full"
+                  allow="camera; microphone; autoplay; encrypted-media;"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section id="faq" className="border-t border-white/10 bg-white/5">
+        <div className="mx-auto max-w-6xl px-4 py-14">
+          <h2 className="text-2xl md:text-3xl font-bold">Frequently asked questions</h2>
+          <div className="mt-8 grid gap-6 md:grid-cols-2">
+            {[
+              {
+                q: "Is this a sales call?",
+                a: "No. This is an independent local research initiative — there’s no product pitch and nothing to buy.",
+              },
+              {
+                q: "Will my information be shared?",
+                a: "No. Conversations are confidential and findings are reported in aggregate without identifying details.",
+              },
+              {
+                q: "Who’s eligible?",
+                a: "California SMBs, ideally within the Bay Area, with 2–100 employees; owners/managers/finance leads preferred.",
+              },
+              {
+                q: "How do I get paid?",
+                a: "You’ll receive a $150 thank‑you (digital card or equivalent) after completing the interview.",
+              },
+            ].map((f) => (
+              <div key={f.q} className="rounded-2xl border border-white/10 bg-white/5 p-6">
+                <p className="font-semibold">{f.q}</p>
+                <p className="mt-2 text-white/80 text-sm">{f.a}</p>

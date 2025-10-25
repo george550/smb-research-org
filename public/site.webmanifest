@@ -1,0 +1,20 @@
+{
+  "name": "Bay Area Small Business Study",
+  "short_name": "BA Business Study",
+  "description": "A local, community-first research initiative for Bay Area small businesses",
+  "icons": [
+    {
+      "src": "/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#AA0000",
+  "background_color": "#ffffff",
+  "display": "standalone"
+}

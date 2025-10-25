@@ -1,0 +1,143 @@
+STEP 3 VALIDATION BUG - CONSOLE LOG SAMPLE
+==============================================
+
+This file contains a representative sample of the console output captured
+during the Step 3 validation bug test. The full output contained tens of
+thousands of identical cycles before the browser crashed.
+
+==============================================
+SECTION 1: SUCCESSFUL TRANSITION TO STEP 3
+==============================================
+
+[LOG] [DEBUG nextStep] Current step: 2
+[LOG] [DEBUG nextStep] Validating fields: [businessName, city, role, employeeCount, industry]
+[LOG] [DEBUG nextStep] Validation result: true
+[LOG] [DEBUG nextStep] Errors after trigger: {}
+[LOG] [DEBUG nextStep] Setting attemptedSubmit=false, finalSubmitAttempted=false
+[LOG] [DEBUG nextStep] Calling clearErrors()
+[LOG] [DEBUG nextStep] Advancing to next step
+
+==============================================
+SECTION 2: INITIAL STEP 3 RENDER (NORMAL)
+==============================================
+
+[LOG] [DEBUG RENDER] Responsibilities - finalSubmitAttempted: false errors.responsibilities: undefined
+[LOG] [DEBUG RENDER] Tools - finalSubmitAttempted: false errors.tools: undefined
+[LOG] [DEBUG RENDER] FinanceFrequency - finalSubmitAttempted: false errors.financeFrequency: undefined
+[LOG] [DEBUG RENDER] CashFlowStory - finalSubmitAttempted: false errors.cashFlowStory: undefined
+[LOG] [DEBUG RENDER] ComfortableDiscussing - finalSubmitAttempted: false errors.comfortableDiscussing: undefined
+[LOG] [DEBUG RENDER] ReferralSource - finalSubmitAttempted: false errors.referralSource: undefined
+[LOG] [DEBUG] useEffect fired - currentStep: 3
+[LOG] [DEBUG] errors object: {}
+[LOG] [DEBUG] finalSubmitAttempted: false
+[LOG] [DEBUG] attemptedSubmit: false
+
+==============================================
+SECTION 3: BUG STARTS - FIRST ANOMALY
+==============================================
+
+[LOG] [DEBUG] Clearing errors for Step 3
+[LOG] [DEBUG] After clearErrors - errors: {}
+[LOG] [DEBUG RENDER] Responsibilities - finalSubmitAttempted: true  <-- FIRST PROBLEM: This flipped to TRUE!
+[LOG] [DEBUG RENDER] Tools - finalSubmitAttempted: true
+[LOG] [DEBUG RENDER] FinanceFrequency - finalSubmitAttempted: true
+[LOG] [DEBUG RENDER] CashFlowStory - finalSubmitAttempted: true
+[LOG] [DEBUG RENDER] ComfortableDiscussing - finalSubmitAttempted: true
+[LOG] [DEBUG RENDER] ReferralSource - finalSubmitAttempted: true
+[LOG] [DEBUG] useEffect fired - currentStep: 3
+[LOG] [DEBUG] errors object: {}
+[LOG] [DEBUG] finalSubmitAttempted: true  <-- WHY IS THIS TRUE? User hasn't submitted!
+[LOG] [DEBUG] attemptedSubmit: true
+
+==============================================
+SECTION 4: INFINITE LOOP BEGINS
+==============================================
+
+[LOG] [DEBUG] Clearing errors for Step 3
+[LOG] [DEBUG] After clearErrors - errors: {}
+[LOG] [DEBUG RENDER] Responsibilities - finalSubmitAttempted: true
+[LOG] [DEBUG RENDER] Tools - finalSubmitAttempted: true
+[LOG] [DEBUG RENDER] FinanceFrequency - finalSubmitAttempted: true
+[LOG] [DEBUG RENDER] CashFlowStory - finalSubmitAttempted: true
+[LOG] [DEBUG RENDER] ComfortableDiscussing - finalSubmitAttempted: true
+[LOG] [DEBUG RENDER] ReferralSource - finalSubmitAttempted: true
+[LOG] [DEBUG] useEffect fired - currentStep: 3
+[LOG] [DEBUG] errors object: {}
+[LOG] [DEBUG] finalSubmitAttempted: true
+[LOG] [DEBUG] attemptedSubmit: true
+[LOG] [DEBUG] Clearing errors for Step 3
+[LOG] [DEBUG] After clearErrors - errors: {}
+
+[LOG] [DEBUG RENDER] Responsibilities - finalSubmitAttempted: false  <-- Now it flipped back to FALSE!
+[LOG] [DEBUG RENDER] Tools - finalSubmitAttempted: false
+[LOG] [DEBUG RENDER] FinanceFrequency - finalSubmitAttempted: false
+[LOG] [DEBUG RENDER] CashFlowStory - finalSubmitAttempted: false
+[LOG] [DEBUG RENDER] ComfortableDiscussing - finalSubmitAttempted: false
+[LOG] [DEBUG RENDER] ReferralSource - finalSubmitAttempted: false
+[LOG] [DEBUG] useEffect fired - currentStep: 3
+[LOG] [DEBUG] errors object: {}
+[LOG] [DEBUG] finalSubmitAttempted: false
+[LOG] [DEBUG] attemptedSubmit: true
+[LOG] [DEBUG] Clearing errors for Step 3
+[LOG] [DEBUG] After clearErrors - errors: {}
+
+[LOG] [DEBUG RENDER] Responsibilities - finalSubmitAttempted: true  <-- And back to TRUE again!
+[LOG] [DEBUG RENDER] Tools - finalSubmitAttempted: true
+[LOG] [DEBUG RENDER] FinanceFrequency - finalSubmitAttempted: true
+[LOG] [DEBUG RENDER] CashFlowStory - finalSubmitAttempted: true
+[LOG] [DEBUG RENDER] ComfortableDiscussing - finalSubmitAttempted: true
+[LOG] [DEBUG RENDER] ReferralSource - finalSubmitAttempted: true
+[LOG] [DEBUG] useEffect fired - currentStep: 3
+[LOG] [DEBUG] errors object: {}
+[LOG] [DEBUG] finalSubmitAttempted: true
+[LOG] [DEBUG] attemptedSubmit: true
+[LOG] [DEBUG] Clearing errors for Step 3
+[LOG] [DEBUG] After clearErrors - errors: {}
+
+[LOG] [DEBUG RENDER] Responsibilities - finalSubmitAttempted: false  <-- FALSE again
+[LOG] [DEBUG RENDER] Tools - finalSubmitAttempted: false
+[LOG] [DEBUG RENDER] FinanceFrequency - finalSubmitAttempted: false
+[LOG] [DEBUG RENDER] CashFlowStory - finalSubmitAttempted: false
+[LOG] [DEBUG RENDER] ComfortableDiscussing - finalSubmitAttempted: false
+[LOG] [DEBUG RENDER] ReferralSource - finalSubmitAttempted: false
+[LOG] [DEBUG] useEffect fired - currentStep: 3
+[LOG] [DEBUG] errors object: {}
+[LOG] [DEBUG] finalSubmitAttempted: false
+[LOG] [DEBUG] attemptedSubmit: true
+[LOG] [DEBUG] Clearing errors for Step 3
+[LOG] [DEBUG] After clearErrors - errors: {}
+
+==============================================
+... THIS PATTERN REPEATS INFINITELY ...
+==============================================
+
+The above cycle repeats thousands of times until the browser crashes.
+
+KEY OBSERVATIONS:
+- finalSubmitAttempted toggles: false → true → false → true → ...
+- attemptedSubmit stays true after the first toggle
+- All 6 form fields re-render on every toggle
+- useEffect fires on every cycle with "Clearing errors for Step 3"
+- clearErrors() runs on every cycle
+- No errors are ever present (errors object is always {})
+
+PERFORMANCE IMPACT:
+- Each cycle renders 6 form fields
+- The cycle repeats approximately 1000+ times per second
+- Total renders: 6000+ component renders per second
+- Browser freezes within 2-3 seconds
+- Page becomes completely unresponsive
+
+ROOT CAUSE HYPOTHESIS:
+The useEffect that clears errors is causing the infinite loop:
+1. useEffect runs because of a dependency change
+2. clearErrors() is called
+3. Calling clearErrors() updates state
+4. State update triggers re-render
+5. Re-render causes useEffect to run again (dependency changed)
+6. Loop repeats infinitely
+
+SOLUTION:
+Fix the useEffect dependencies or add a guard condition to prevent
+the infinite loop. The clearErrors() call should only run once when
+Step 3 first mounts, not on every render.
