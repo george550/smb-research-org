@@ -58,14 +58,6 @@ export default function Home() {
               </span>
             </a>
             <nav className="hidden md:flex gap-10 text-sm">
-              <a href="#why" className="text-[#0056b3] hover:text-[#003d82] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#AA0000] focus-visible:ring-offset-2 rounded px-1" data-testid="link-why" onClick={(e) => {
-                e.preventDefault();
-                const element = document.getElementById('why');
-                if (element) {
-                  const offsetTop = element.offsetTop - 40;
-                  window.scrollTo({ top: offsetTop, behavior: 'smooth' });
-                }
-              }}>Why</a>
               <a href="#about" className="text-[#0056b3] hover:text-[#003d82] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#AA0000] focus-visible:ring-offset-2 rounded px-1" data-testid="link-what" onClick={(e) => {
                 e.preventDefault();
                 const element = document.getElementById('about');
@@ -315,57 +307,31 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="why" className="border-t border-neutral-200 dark:border-neutral-800 bg-[#F5F1E8] dark:bg-neutral-800">
+      <section id="about" className="border-t border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-900">
         <div className="grid md:grid-cols-2">
           {/* Left Column - Image (Full Height) */}
           <div className="h-full min-h-[400px] md:min-h-[600px]">
             <img
               src={agencyImage}
-              alt="Small business team collaborating in meeting"
+              alt="Small business team meeting"
               className="w-full h-full object-cover"
             />
           </div>
 
           {/* Right Column - Content */}
           <div className="px-4 md:px-12 py-14 flex flex-col justify-center">
-            <h2 className="text-2xl md:text-[2.9375rem] md:leading-[1.15] font-medium mb-10 text-neutral-900 dark:text-neutral-100 uppercase" style={{fontFamily: "'Inter Tight', sans-serif", letterSpacing: '-0.02em'}} data-testid="text-why-title">
-              Why your voice matters
+            <h2 className="text-[21px] md:text-[44px] md:leading-[1.15] font-medium mb-10 text-neutral-900 dark:text-neutral-100 uppercase" style={{fontFamily: "'Inter Tight', sans-serif", letterSpacing: '-0.02em'}} data-testid="text-what-title">
+              What participation involves
             </h2>
 
             <div className="space-y-6 mb-8">
-              <p className="text-neutral-600 dark:text-neutral-300 leading-relaxed text-lg" data-testid="text-why-paragraph-1">
-                Running a small business means juggling everything—finances, marketing, operations, and more.
-                You know what works and what doesn't because you live it every day.
+              <p className="text-neutral-600 dark:text-neutral-300 leading-relaxed text-lg">
+                Running a small business means juggling everything—finances, marketing, operations, and more. You know what works and what doesn't because you live it every day.
               </p>
-              <p className="text-neutral-600 dark:text-neutral-300 leading-relaxed" data-testid="text-why-paragraph-2">
-                We're documenting how small businesses really operate across America. No product pitch. No agenda.
-                Just learning from the people who make it happen.
+              <p className="text-neutral-600 dark:text-neutral-300 leading-relaxed">
+                We're documenting how small businesses really operate across America. No product pitch. No agenda. Just learning from the people who make it happen.
               </p>
             </div>
-
-            <div className="grid grid-cols-1 gap-6">
-              {[
-                { t: "Quick", d: "5-minute survey ($20)" },
-                { t: "In-Depth", d: "60-minute conversation ($150)" },
-                { t: "Confidential", d: "Your name stays private" },
-              ].map((item, idx) => (
-                <div key={item.t} className="space-y-1" data-testid={`list-item-why-${idx}`}>
-                  <div className="text-[48px] md:text-[56px] font-thin text-neutral-900 dark:text-neutral-100 leading-none">{item.t}</div>
-                  <div className="text-sm text-neutral-600 dark:text-neutral-400">{item.d}</div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="about" className="border-t border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-900">
-        <div className="grid md:grid-cols-2">
-          {/* Left Column - Content */}
-          <div className="px-4 md:px-12 py-14 flex flex-col justify-center">
-            <h2 className="text-2xl md:text-[2.9375rem] md:leading-[1.15] font-medium mb-10 text-neutral-900 dark:text-neutral-100 uppercase" style={{fontFamily: "'Inter Tight', sans-serif", letterSpacing: '-0.02em'}} data-testid="text-what-title">
-              What participation involves
-            </h2>
 
             <div className="grid grid-cols-1 gap-6">
               {[
@@ -374,27 +340,18 @@ export default function Home() {
                 { t: "$20 or $150", d: "Get compensated for your time via Amazon gift card, Venmo, or Zelle." },
               ].map((item, idx) => (
                 <div key={item.t} className="space-y-1" data-testid={`card-what-${idx}`}>
-                  <div className="text-[48px] md:text-[56px] font-thin text-neutral-900 dark:text-neutral-100 leading-none">{item.t}</div>
-                  <div className="text-sm text-neutral-600 dark:text-neutral-400">{item.d}</div>
+                  <div className="text-[45px] md:text-[53px] font-thin text-neutral-900 dark:text-neutral-100 leading-none">{item.t}</div>
+                  <div className="text-[11px] text-neutral-600 dark:text-neutral-400">{item.d}</div>
                 </div>
               ))}
             </div>
-          </div>
-
-          {/* Right Column - Image (Full Height) */}
-          <div className="h-full min-h-[400px] md:min-h-[600px]">
-            <img
-              src={coffeeShopImage}
-              alt="Busy small business coffee shop"
-              className="w-full h-full object-cover"
-            />
           </div>
         </div>
       </section>
 
       {/* Who Section with Business Type Images */}
       <section id="who" className="border-t border-neutral-200 dark:border-neutral-800 bg-[#eeebe7] dark:bg-neutral-800">
-        <div className="mx-auto max-w-6xl px-1 md:px-2 py-14">
+        <div className="pt-14 pb-0">
           <h2 className="text-2xl md:text-[2.9375rem] md:leading-[1.15] font-medium text-center text-neutral-900 dark:text-neutral-100 mb-10 uppercase px-4" style={{fontFamily: "'Inter Tight', sans-serif", letterSpacing: '-0.02em'}} data-testid="text-who-title">
             We want to hear from you
           </h2>
@@ -403,12 +360,12 @@ export default function Home() {
             <div className="text-center max-w-3xl mx-auto px-4">
               <p className="text-neutral-600 dark:text-neutral-300 leading-relaxed text-lg" data-testid="text-who-description">
                 Owners, managers, or operations leads at businesses with 2–100 employees who handle finances, marketing,
-                operations, or day-to-day business decisions.
+                operations, or day-to-day business decisions. From all 50 states—major cities, small towns, and everything in between.
               </p>
             </div>
 
             {/* Business Types Grid with Images */}
-            <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-2 mt-10">
+            <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-0 mt-10">
               {[
                 { img: salonImage, label: "Health & Wellness" },
                 { img: boutiqueImage, label: "Retail & Boutiques" },
@@ -419,23 +376,17 @@ export default function Home() {
                 { img: coffeeShopImage, label: "Food & Beverage" },
                 { img: agencyImage, label: "Marketing & Tech" },
               ].map((business, idx) => (
-                <div key={idx} className="relative rounded-xl overflow-hidden group cursor-default">
+                <div key={idx} className="relative overflow-hidden group cursor-default">
                   <img
                     src={business.img}
                     alt={business.label}
                     className="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-300"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent flex items-end">
-                    <p className="text-white font-semibold p-4 text-sm">{business.label}</p>
+                    <p className="text-white font-semibold p-4 text-base">{business.label}</p>
                   </div>
                 </div>
               ))}
-            </div>
-
-            <div className="text-center mt-8">
-              <p className="text-neutral-600 dark:text-neutral-300">
-                From all 50 states—major cities, small towns, and everything in between.
-              </p>
             </div>
           </div>
         </div>
@@ -485,11 +436,11 @@ export default function Home() {
 
                 <a
                   href="/survey"
-                  className="flex flex-col items-center justify-center rounded-xl bg-[#df2b1e] text-white px-8 py-4 w-full hover:bg-[#c92719] hover:scale-105 transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#df2b1e] focus-visible:ring-offset-2"
+                  className="inline-flex items-center gap-1.5 justify-center rounded-md bg-[#00152a] text-white px-4 py-2.5 text-sm font-bold hover:bg-[#000d1a] transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#00152a]"
                   data-testid="button-survey-join-section"
                 >
-                  <span className="text-lg font-bold">Fill out 5-minute Survey</span>
-                  <span className="text-sm mt-1 opacity-90">Quick $20 Amazon/Zelle Reward</span>
+                  <span>Take 5-min Survey</span>
+                  <ArrowRight className="w-4 h-4" />
                 </a>
               </div>
 
@@ -513,11 +464,11 @@ export default function Home() {
 
                 <a
                   href="/join"
-                  className="flex flex-col items-center justify-center rounded-xl border-2 border-[#004f91] text-[#004f91] px-8 py-4 w-full hover:bg-[#004f91] hover:text-white hover:scale-105 transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#004f91] focus-visible:ring-offset-2"
+                  className="inline-flex items-center gap-1.5 justify-center rounded-md border-2 border-[#00152a] text-[#00152a] px-4 py-2.5 text-sm font-bold hover:bg-[#00152a] hover:text-white transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#00152a] focus-visible:ring-offset-2"
                   data-testid="button-join-section"
                 >
-                  <span className="text-lg font-bold">Schedule 60-minute Zoom</span>
-                  <span className="text-sm mt-1 opacity-90">$150 compensation</span>
+                  <span>Schedule Interview</span>
+                  <ArrowRight className="w-4 h-4" />
                 </a>
               </div>
             </div>
@@ -625,21 +576,10 @@ export default function Home() {
             Share this study with other small business owners in your network.
           </p>
 
-          <div className="flex flex-wrap justify-center gap-4">
+          <div className="flex flex-wrap justify-center gap-3">
             <a
-              href={`https://wa.me/?text=${encodeURIComponent('Check out this small business research study - $20 for a 5-min survey or $150 for a 60-min interview: ' + window.location.href)}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-2 rounded-lg border-2 border-[#25D366] text-[#25D366] px-6 py-3 font-semibold hover:bg-[#25D366] hover:text-white transition-all duration-200"
-              data-testid="button-share-whatsapp"
-            >
-              <Share2 className="w-5 h-5" />
-              Share via WhatsApp
-            </a>
-
-            <a
-              href={`mailto:?subject=${encodeURIComponent('Small Business Research Study')}&body=${encodeURIComponent('I thought you might be interested in this research study for small business owners nationwide.\n\nYou can earn $20 for a 5-minute survey or $150 for a 60-minute interview by sharing your experience managing a business.\n\nLearn more: ' + window.location.href)}`}
-              className="flex items-center gap-2 rounded-lg border-2 border-[#004f91] text-[#004f91] px-6 py-3 font-semibold hover:bg-[#004f91] hover:text-white transition-all duration-200"
+              href={`mailto:?subject=${encodeURIComponent('US Small Business Study')}&body=${encodeURIComponent('I thought you might be interested in this research study for small business owners nationwide.\n\nYou can earn $20 for a 5-minute survey or $150 for a 60-minute interview by sharing your experience managing a business.\n\nLearn more: ' + window.location.href)}`}
+              className="inline-flex items-center gap-1.5 rounded-md border border-[#00152a] text-[#00152a] px-4 py-2.5 text-sm font-bold hover:bg-[#00152a] hover:text-white transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#00152a] focus-visible:ring-offset-2"
               data-testid="button-share-email"
             >
               <Mail className="w-5 h-5" />
@@ -647,11 +587,30 @@ export default function Home() {
             </a>
 
             <a
-              href={`sms:?&body=${encodeURIComponent('Check out this small business study - $20 for a 5-min survey or $150 for a 60-min interview: ' + window.location.href)}`}
-              className="flex items-center gap-2 rounded-lg border-2 border-[#004f91] text-[#004f91] px-6 py-3 font-semibold hover:bg-[#004f91] hover:text-white transition-all duration-200"
+              href={`https://wa.me/?text=${encodeURIComponent('Check out this US small business research study - $20 for a 5-min survey or $150 for a 60-min interview: ' + window.location.href)}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 rounded-md border border-[#00152a] text-[#00152a] px-4 py-2.5 text-sm font-bold hover:bg-[#00152a] hover:text-white transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#00152a] focus-visible:ring-offset-2"
+              data-testid="button-share-whatsapp"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" className="w-7 h-7" fill="currentColor">
+                <path d="M66.23,55.84l-5.92-4.33c-0.9-0.66-2-0.92-3.1-0.75c-1.1,0.17-2.06,0.76-2.72,1.66l-1.83,2.51   c-0.02,0.03-0.04,0.06-0.06,0.09c-0.28,0.04-1.76,0.07-5.3-2.75l-0.38-0.27c-3.7-2.46-4.12-3.87-4.17-4.16   c0.02-0.03,0.05-0.06,0.07-0.09l1.83-2.51c1.35-1.85,0.95-4.46-0.91-5.82l-6.03-4.4c-1.85-1.36-4.46-0.95-5.82,0.91l-1.85,2.54   c-1.79,2.46-2.26,5.69-1.25,8.64c1.47,4.27,5.16,8.78,11,13.42c0.1,0.12,0.22,0.22,0.35,0.32c0.14,0.1,0.29,0.2,0.43,0.3   c0.14,0.11,0.28,0.21,0.42,0.32c0.13,0.1,0.27,0.18,0.41,0.24c6.2,4.14,11.62,6.29,16.14,6.38c0.06,0,0.13,0,0.19,0   c2.95,0,5.77-1.45,7.55-3.9l1.85-2.54c0.66-0.9,0.92-2,0.75-3.1C67.72,57.46,67.13,56.49,66.23,55.84z M63.91,59.3l-1.85,2.54   c-1.06,1.45-2.76,2.28-4.43,2.25c-2.7-0.06-7.42-1.18-14.68-6.17c-6.97-5.4-9.48-9.55-10.36-12.1c-0.58-1.69-0.32-3.6,0.69-4.98   l1.85-2.54c0.05-0.07,0.15-0.09,0.23-0.04l6.03,4.4c0.07,0.05,0.09,0.16,0.04,0.23l-1.75,2.39c-0.53,0.58-1,1.56-0.92,2.81   c0.16,2.31,2.1,4.68,5.88,7.19l0.23,0.17c3.61,2.88,6.46,4.01,8.71,3.46c1.21-0.3,2-1.05,2.39-1.73l1.75-2.39   c0.05-0.06,0.17-0.08,0.23-0.04l5.93,4.33C63.94,59.11,63.95,59.23,63.91,59.3z"/>
+                <path d="M48.4,18.01c-18.13,0-32.89,14.75-32.89,32.89c0,7.64,2.65,15,7.48,20.88l-5.55,10.81c-0.37,0.71-0.27,1.57,0.24,2.19   c0.39,0.46,0.95,0.72,1.54,0.72c0.19,0,0.38-0.03,0.57-0.08l15.15-4.5c4.24,1.91,8.76,2.87,13.45,2.87   c18.13,0,32.89-14.75,32.89-32.89S66.53,18.01,48.4,18.01z M48.4,79.78c-4.35,0-8.54-0.94-12.43-2.81   c-0.45-0.21-0.96-0.25-1.43-0.11l-11.39,3.39l4.02-7.84c0.38-0.74,0.26-1.63-0.29-2.25c-4.75-5.3-7.37-12.15-7.37-19.26   c0-15.93,12.96-28.89,28.89-28.89S77.28,34.97,77.28,50.9S64.33,79.78,48.4,79.78z"/>
+              </svg>
+              Share via WhatsApp
+            </a>
+
+            <a
+              href={`sms:?&body=${encodeURIComponent('Check out this US business study - $20 for a 5-min survey or $150 for a 60-min interview: ' + window.location.href)}`}
+              className="inline-flex items-center gap-1.5 rounded-md border border-[#00152a] text-[#00152a] px-4 py-2.5 text-sm font-bold hover:bg-[#00152a] hover:text-white transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#00152a] focus-visible:ring-offset-2"
               data-testid="button-share-sms"
             >
-              <Phone className="w-5 h-5" />
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" className="w-5 h-5" fill="currentColor">
+                <path d="m82.512 10.762h-65.023c-4.1289 0-7.4883 3.3594-7.4883 7.4883v39.609c0 4.1289 3.3594 7.4883 7.4883 7.4883h8.1406l1.3594 21.629c0.058594 1.0195 0.76953 1.8906 1.7617 2.1719 0.21875 0.058593 0.42969 0.089843 0.64844 0.089843 0.78125 0 1.5195-0.37891 1.9805-1.0312l15.898-22.859h35.238c4.1289 0 7.4883-3.3594 7.4883-7.4883l0.007813-39.609c-0.011719-4.1289-3.3711-7.4883-7.5-7.4883zm2.668 47.098c0 1.4688-1.1992 2.6719-2.6719 2.6719h-36.5c-0.78906 0-1.5312 0.39062-1.9805 1.0312l-12.668 18.219-1.0703-16.988c-0.078124-1.2695-1.1289-2.2617-2.3984-2.2617h-10.398c-1.4688 0-2.6719-1.1992-2.6719-2.6719v-39.609c0-1.4688 1.1992-2.6719 2.6719-2.6719h65.031c1.4688 0 2.6719 1.1992 2.6719 2.6719l-0.003906 39.609z"/>
+                <path d="m71.66 23.941h-43.41c-1.3281 0-2.4102 1.0781-2.4102 2.4102 0 1.3281 1.0781 2.4102 2.4102 2.4102h43.41c1.3281 0 2.4102-1.0781 2.4102-2.4102 0-1.3398-1.082-2.4102-2.4102-2.4102z"/>
+                <path d="m71.66 36.121h-43.41c-1.3281 0-2.4102 1.0781-2.4102 2.4102 0 1.3281 1.0781 2.4102 2.4102 2.4102h43.41c1.3281 0 2.4102-1.0781 2.4102-2.4102s-1.082-2.4102-2.4102-2.4102z"/>
+                <path d="m60.871 48.301h-32.621c-1.3281 0-2.4102 1.0781-2.4102 2.4102 0 1.3281 1.0781 2.4102 2.4102 2.4102h32.621c1.3281 0 2.4102-1.0781 2.4102-2.4102 0-1.332-1.082-2.4102-2.4102-2.4102z"/>
+              </svg>
               Share via Text
             </a>
           </div>
