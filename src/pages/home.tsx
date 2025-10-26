@@ -4,10 +4,19 @@ import { useQuery } from "@tanstack/react-query";
 import type { Testimonial } from "@shared/schema";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { ThemeToggle } from "@/components/ThemeToggle";
-import logo from "@assets/logo.png";
-import bridgeImage from "@assets/chris-brignola-392-sf bridge_1760564475188.jpg";
-import bayAreaMap from "@assets/subregions-san-francisco-bay-area-600nw-2474886153_1760574932010.jpg";
-import bayAreaMapDark from "@assets/bayAreaMapDark.png";
+import logo from "@assets/us-flag.svg";
+import footerFlag from "@assets/us-flag-footer.svg";
+import headerImage from "@assets/header.jpg";
+import amexDesktopImage from "@assets/amex-desktop.jpg";
+import agencyImage from "@assets/agency.jpg";
+import architectImage from "@assets/architect.jpg";
+import boutiqueImage from "@assets/boutique.jpg";
+import coffeeShopImage from "@assets/coffee shop.jpg";
+import amexMapImage from "@assets/amex-map.png";
+import constructionImage from "@assets/construction.jpg";
+import legalImage from "@assets/legal.jpg";
+import manufacturingImage from "@assets/manufacturing.jpg";
+import salonImage from "@assets/salon.jpg";
 import businessCollage from "@assets/folks_1760579151233.jpg";
 import rewardImage from "@assets/ChatGPT Image Oct 15, 2025, 06_29_43 PM_1760578275715.png";
 import owner1 from "@assets/stock_images/professional_small_b_4def1d56.jpg";
@@ -29,7 +38,7 @@ export default function Home() {
     <div className="min-h-screen bg-white dark:bg-neutral-900 text-neutral-900 dark:text-neutral-100">
       <header className="sticky top-0 z-30 backdrop-blur supports-[backdrop-filter]:bg-white/80 dark:supports-[backdrop-filter]:bg-neutral-900/80 bg-white dark:bg-neutral-900 border-b border-neutral-200 dark:border-neutral-800">
         <div className="relative">
-          <div className="mx-auto max-w-6xl px-4 py-3 flex items-center justify-between gap-4">
+          <div className="mx-auto max-w-6xl lg:max-w-none px-4 lg:pl-[50px] lg:pr-[50px] py-[0.47rem] flex items-center justify-between gap-4">
             <a
               href="#top"
               className="flex items-center gap-3 hover:opacity-80 transition-opacity focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#AA0000] focus-visible:ring-offset-2 rounded-lg"
@@ -39,13 +48,17 @@ export default function Home() {
                 window.scrollTo({ top: 0, behavior: 'smooth' });
               }}
             >
-              <img src={logo} alt="Bay Area Small Business Study logo" className="h-10 w-10 rounded-full object-cover" data-testid="img-logo" />
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" className="h-[2.52rem] w-[2.52rem]" data-testid="img-logo">
+                <style type="text/css">{`.st0{fill:none;stroke:#006fcf;stroke-width:3;stroke-miterlimit:10;}`}</style>
+                <path fill="#006fcf" d="M90.9,33.1c0,0.3,0,0.7,0,1c-0.7,0.7-1.5,1.3-2.2,2c-0.5,0.5-1.2,0.8-1.4,1.4c-0.3,0.6-0.2,1.3-0.2,2c0,0.6,0.9,1.3,1.5,1.1  c-0.1-0.2-0.2-0.3-0.4-0.6c0.8,0.6,0.8,0.7,0.2,1.1c-0.2,0.1-0.7,0.1-0.8,0.2c-0.5,0.9-1.5,0.8-2.2,1.3c-0.5,0.3-1.1,0.7-1.5,1.1  c-0.2,0.2-0.4,0.7-0.3,0.9c0.7,1.3,0.1,2.2-0.5,3.1c-0.4-0.2-0.6-0.3-0.9-0.4c-0.1,0-0.1,0.1-0.2,0.1c1.9,1.4,0.6,2.8,0.3,4.2  c-0.1,0-0.2,0-0.3,0c0-0.6,0-1.3,0-1.9c-0.1,0-0.1,0-0.2,0c0,0.1-0.1,0.2-0.1,0.4c-0.2-0.3-0.3-0.4-0.5-0.7C81,49.7,80.9,49.9,81,50  c0.1,0.5,0.3,1.1,0.4,1.6c0.1,0.2,0.2,0.4,0.3,0.5c0.9,0.3,0.9,1.2,1.3,1.8c0.4,0.8,0.2,1.2-0.6,1.6c-0.2,0.1-0.3,0.4-0.5,0.6  c0.3,0.1,0.5,0.1,0.8,0.2c-0.4,0.3-0.6,0.6-0.9,0.7c-1.3,0.4-1.6,2.1-2.9,2.5c-0.1,0-0.2,0.3-0.2,0.4c-0.1,1-0.9,1.6-1.5,2.2  c-0.8,0.8-1.4,1.7-1.5,2.9c0,1.2,0.3,2.3,0.9,3.3c0.5,0.8,1.1,1.5,1.5,2.4c0.7,1.5,1.5,2.9,1.3,4.7c-0.1,0.9-0.3,1.5-1.3,2  c0.4-0.4,0.6-0.6,0.9-0.9l-0.1-0.1c-0.3,0.1-0.6,0.2-0.9,0.3c-0.3-0.4-0.6-0.9-0.9-1.2c-0.5-0.5-1.2-0.7-1.6-1.3  c-0.8-1.1-1.7-2.2-1.5-3.8c0.1-0.3-0.2-0.7-0.4-1c-0.4-0.4-0.9-0.7-1.4-1.1c-0.5-0.4-1-0.7-1.6,0c-0.4,0.4-0.9,0.7-1.6,0.3  c-0.5-0.4-1.2-0.7-1.8-0.7c-0.7-0.1-1.5,0.1-2.3,0.2c-0.1-0.2-0.2-0.4-0.2-0.4c-0.6,0.2-0.9,0.4-1.4,0.4C62.7,68,62,68,61.6,68.9  c0.3-0.1,0.5-0.2,0.7-0.3c0.1,0,0.1,0.1,0.2,0.1c-0.1,0.3-0.3,0.6-0.5,1c0.2,0.1,0.4,0.2,0.6,0.2c0.2,0.1,0.3,0.2,0.6,0.3  c-0.6,0.4-0.6,0.4-1.7-0.3c-0.1,0.3-0.3,0.5-0.5,0.9c-0.1-0.3-0.1-0.4-0.2-0.6C60,71,59.4,70.9,58.9,70c-0.2-0.3-0.7-0.4-1.1-0.6  c0,0.1-0.1,0.1-0.1,0.2c0.2,0.1,0.3,0.2,0.5,0.2c-0.8,0.1-1.6-0.1-2.3-0.1c-0.8,0-1.7,0.1-2.4,0.5C52,71,50.7,72.1,49.2,73  c-0.5,0.3-0.7,0.6-0.7,1.2c0,1,0,1.9,0,3c-0.7-0.2-1.4-0.4-2.1-0.7c-1-0.4-1.6-1.1-1.6-2.2c0-0.2-0.2-0.4-0.3-0.6  c-0.5-0.8-1.2-1.4-1.5-2.4c-0.3-1.1-1.2-1.8-2.4-2.1c-0.7-0.2-1.1,0-1.4,0.6c-0.2,0.3-0.4,0.6-0.6,1c-0.6-0.3-1.1-0.6-1.6-0.8  c-0.6-0.3-1-0.8-1-1.5c-0.1-1.8-2-2.3-2.7-3.7c0,0-0.1,0-0.2,0c-0.8-0.1-1.7-0.2-2.5-0.3c-0.1,0.3-0.2,0.6-0.3,0.9  c-0.9-0.1-1.7-0.3-2.6-0.3c-3-0.3-5.3-2.3-7.7-3.7c-0.4-0.2-0.8-0.5-1.2-0.5c-0.7-0.1-1.5-0.2-2.2-0.3c-0.2-0.1-0.5-0.4-0.6-0.6  c-0.1-0.9-0.3-1.7-1.3-2.1c-0.1,0-0.1-0.2-0.2-0.2c-0.8-0.8-1.4-1.7-2.5-2c-0.5-0.1-0.5-0.3-0.5-0.7c0-0.6-0.1-1.1-0.2-1.7  c-0.1-0.4-0.4-0.8-0.6-1.1c-0.3-0.6-0.5-1.1,0-1.5c-0.2-0.6-0.4-1.1-0.6-1.7c-0.2-0.8-0.1-1.6-0.5-2.3c-0.5-0.8-0.6-1.6-0.3-2.5  c0.1-0.4,0.2-1-0.4-1.2c0-0.1,0-0.2,0-0.3c0.7-1,1.5-2.1,1.2-3.5c-0.1-0.5,0.1-1.1,0.3-1.6c0.8-1.9,1.8-3.7,2.5-5.6  c0.3-0.8,0.2-1.8,0.3-2.7c0-0.6,0-1.2,0-1.9c1,0.3,1.6,1.4,2.7,0.8c0,0.2,0.1,0.3,0.1,0.5c0.1,0,0.1,0,0.2,0  c-0.1-0.6-0.2-1.1-0.3-1.7c0.1,0,0.2,0,0.3,0c0.9,0.3,1.8,0.5,2.7,0.8c10.4,2.6,20.9,4.2,31.7,4.1c0.6,0,1.2,0.1,1.3-1  c0.2,0.4,0.4,0.5,0.4,0.7c0,0.6,0.3,0.9,0.9,0.9c0.9,0.1,1.7,0.3,2.6,0.5c0.4,0.1,0.9,0.4,1.3,0.4c0.7,0.1,1.4,0,2.2,0  c0,0.1,0.1,0.2,0.1,0.4c-1.4,0.3-2.4,1.2-3.1,2.5c0.6-0.2,1-0.4,1.5-0.6c0,0.2,0,0.4,0,0.6c1.7,0.2,2.5-1.5,4-1.8  c-0.2,0.3-0.4,0.6-0.6,0.9c0.4,0.2,0.9,0.2,1,0.4c0.5,0.7,1,0.4,1.6,0.2c0.6-0.2,1.2-0.4,1.9-0.7c0.1,1.2,0.8,0.4,1.3,0.5  c0.1,0.3,0.2,0.7,0.3,1c-2.1,0.2-4.4,0.1-5,3.1c0.3-0.5,0.6-0.8,0.9-1.2c-0.2,1.3-0.4,2.4-0.6,3.7c-0.1,1.3,0.1,2.5,1.1,3.4  c1.2-0.7,1.6-2.2,0.9-3.4c-0.1-0.2-0.3-0.4-0.3-0.7c-0.2-1.7,0.8-3,1.8-4.2c0.1-0.1,0.5-0.1,0.7-0.1c0.3,0,0.5,0.2,0.8,0.3  c1.1,0.4,1.5,2,0.7,2.9c-0.1,0.2-0.1,0.4-0.2,0.6c0.1,0,0.2,0.1,0.3,0.1c0.2-0.2,0.3-0.5,0.5-0.7c0.1-0.1,0.4-0.3,0.6-0.2  c0.5,0.2,1.1,2.3,0.8,2.8c-0.4,0.6-0.7,1.1-1,1.7c0.9,0.4,1.5,0.7,2.3,0.1c0.8-0.6,1.8-1.1,2.6-1.7c0.7-0.6,1.7-1.1,0.8-2.4  c0.7-0.1,1.2-0.2,1.7-0.3c0.6-0.1,1.2-0.2,1.8-0.5c0.2-0.1,0.5-0.8,0.4-0.9c-0.5-0.6-0.1-0.9,0.3-1.3c0.2-0.2,0.3-0.4,0.4-0.6  c0.3-0.6,0.7-0.8,1.4-1c1.4-0.3,2.9-0.4,4.1-1.5c0.6-0.6,0.9-1.2,0.8-1.8c-0.1-1.1,0.2-2.1,0.6-3c0.4,0,0.7,0,0.9-0.1  c0.6-0.3,1.1-0.2,1.3,0.5c0.2,0.6,0.3,1.2,0.5,1.7C89.6,32.4,90,33,90.9,33.1z"/>
+                <circle className="st0" cx="50" cy="50" r="48.1"/>
+              </svg>
               <span className="font-semibold tracking-tight text-neutral-900 dark:text-neutral-100">
-                Bay Area Small Business Study
+                US Small Business Study
               </span>
             </a>
-            <nav className="hidden md:flex gap-6 text-sm text-neutral-600 dark:text-neutral-400">
-              <a href="#why" className="hover:text-neutral-900 dark:hover:text-neutral-100 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#AA0000] focus-visible:ring-offset-2 rounded px-1" data-testid="link-why" onClick={(e) => {
+            <nav className="hidden md:flex gap-10 text-sm">
+              <a href="#why" className="text-[#0056b3] hover:text-[#003d82] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#AA0000] focus-visible:ring-offset-2 rounded px-1" data-testid="link-why" onClick={(e) => {
                 e.preventDefault();
                 const element = document.getElementById('why');
                 if (element) {
@@ -53,7 +66,7 @@ export default function Home() {
                   window.scrollTo({ top: offsetTop, behavior: 'smooth' });
                 }
               }}>Why</a>
-              <a href="#about" className="hover:text-neutral-900 dark:hover:text-neutral-100 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#AA0000] focus-visible:ring-offset-2 rounded px-1" data-testid="link-what" onClick={(e) => {
+              <a href="#about" className="text-[#0056b3] hover:text-[#003d82] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#AA0000] focus-visible:ring-offset-2 rounded px-1" data-testid="link-what" onClick={(e) => {
                 e.preventDefault();
                 const element = document.getElementById('about');
                 if (element) {
@@ -61,7 +74,7 @@ export default function Home() {
                   window.scrollTo({ top: offsetTop, behavior: 'smooth' });
                 }
               }}>What</a>
-              <a href="#who" className="hover:text-neutral-900 dark:hover:text-neutral-100 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#AA0000] focus-visible:ring-offset-2 rounded px-1" data-testid="link-who" onClick={(e) => {
+              <a href="#who" className="text-[#0056b3] hover:text-[#003d82] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#AA0000] focus-visible:ring-offset-2 rounded px-1" data-testid="link-who" onClick={(e) => {
                 e.preventDefault();
                 const element = document.getElementById('who');
                 if (element) {
@@ -69,7 +82,7 @@ export default function Home() {
                   window.scrollTo({ top: offsetTop, behavior: 'smooth' });
                 }
               }}>Who</a>
-              <a href="#faq" className="hover:text-neutral-900 dark:hover:text-neutral-100 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#AA0000] focus-visible:ring-offset-2 rounded px-1" data-testid="link-faq" onClick={(e) => {
+              <a href="#faq" className="text-[#0056b3] hover:text-[#003d82] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#AA0000] focus-visible:ring-offset-2 rounded px-1" data-testid="link-faq" onClick={(e) => {
                 e.preventDefault();
                 const element = document.getElementById('faq');
                 if (element) {
@@ -78,10 +91,10 @@ export default function Home() {
                 }
               }}>FAQ</a>
             </nav>
-            <div className="flex gap-2 items-center">
+            <div className="flex gap-2 items-center lg:mr-0">
               <a
                 href="/survey"
-                className="inline-flex items-center gap-1.5 rounded-lg bg-[#FF4800] text-white px-4 py-2.5 text-sm font-bold shadow-lg hover:bg-[#E04000] hover:scale-105 transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#FF4800]"
+                className="inline-flex items-center gap-1.5 rounded-md bg-[#00152a] text-white px-4 py-2.5 text-sm font-bold hover:bg-[#000d1a] transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#00152a]"
                 data-testid="button-survey-header"
               >
                 <span className="hidden md:inline">Take 5-min Survey</span>
@@ -89,7 +102,7 @@ export default function Home() {
               </a>
               <a
                 href="/join"
-                className="inline-flex items-center gap-1.5 rounded-lg border-2 border-[#FF4800] text-[#FF4800] px-4 py-2.5 text-sm font-bold hover:bg-[#FF4800] hover:text-white hover:scale-105 transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#FF4800] focus-visible:ring-offset-2"
+                className="inline-flex items-center gap-1.5 rounded-md border border-[#00152a] text-[#00152a] px-4 py-2.5 text-sm font-bold hover:bg-[#00152a] hover:text-white transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#00152a] focus-visible:ring-offset-2"
                 data-testid="button-join-header"
               >
                 <span className="hidden md:inline">Schedule 60-min Zoom</span>
@@ -104,201 +117,326 @@ export default function Home() {
       </header>
 
       <section id="top" className="relative overflow-hidden">
-        {/* Background Image with Overlay */}
-        <div className="absolute inset-0 z-0">
-          <img
-            src={bridgeImage}
-            alt="Golden Gate Bridge spanning San Francisco Bay at sunset, symbolizing Bay Area business connections"
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/60 to-black/50"></div>
-          {/* Photo Credit */}
-          <div className="absolute bottom-2 right-2 text-white/40 text-xs">
-            Photo: Chris Brignola
+        {/* Background Image - positioned to show faces in upper area */}
+        <div className="absolute md:left-[50px] md:top-0 -top-[100px] left-0 w-full md:h-full h-auto z-0">
+          <picture className="block w-full h-full">
+            <source
+              media="(max-width: 767px)"
+              srcSet="https://www.americanexpress.com/content/dam/amex/en-us/benefits/shop-small/images/ShopSmall-NC-1-10062025-mob.jpg"
+            />
+            <source
+              media="(min-width: 768px)"
+              srcSet={amexDesktopImage}
+            />
+            <img
+              src={amexDesktopImage}
+              alt="Small business owner collaborating outdoors"
+              className="block w-full md:h-full md:object-cover h-auto md:scale-110 scale-[1.20]"
+              style={{transformOrigin: 'top center'}}
+            />
+          </picture>
+        </div>
+
+        {/* Curved Blue Overlay - AmEx Style with proper breakpoints */}
+        <div className="absolute inset-0 z-10 pointer-events-none">
+          {/* Mobile: VERY pronounced rounded curve - big bubble effect */}
+          <div className="md:hidden absolute inset-0">
+            <svg viewBox="0 0 100 100" preserveAspectRatio="none" className="absolute inset-0 w-full h-full">
+              <path d="M 0,50 Q 50,25 100,50 L 100,100 L 0,100 Z" fill="#006fcf" />
+            </svg>
+          </div>
+
+          {/* Tablet: curved shape from left, wider coverage */}
+          <div className="hidden md:block lg:hidden absolute inset-0">
+            <svg viewBox="0 0 100 100" preserveAspectRatio="none" className="absolute inset-0 w-full h-full">
+              <path d="M 0,0 L 0,100 L 65,100 Q 75,50 65,0 Z" fill="#006fcf" />
+            </svg>
+          </div>
+
+          {/* Desktop: curved shape from left, narrower */}
+          <div className="hidden lg:block absolute inset-0">
+            <svg viewBox="0 0 100 100" preserveAspectRatio="none" className="absolute inset-0 w-full h-full">
+              <path d="M 0,0 L 0,100 L 45,100 Q 55,50 45,0 Z" fill="#006fcf" />
+            </svg>
           </div>
         </div>
-        
-        {/* Content */}
-        <div className="relative z-10 mx-auto max-w-6xl px-4 pt-16 pb-10 md:pb-16">
-          <div className="grid md:grid-cols-[4fr_1fr] gap-8 items-center">
-            {/* Left Column - Main Content */}
-            <div className="max-w-3xl">
-              <h1 className="text-3xl md:text-5xl font-extrabold leading-tight text-white" style={{ textShadow: '0 2px 8px rgba(0, 0, 0, 0.6)' }} data-testid="text-hero-title">
-                A local, community-first research initiative for Bay Area small businesses
+
+        {/* Content - Different layouts per breakpoint */}
+        <div className="relative z-20">
+          {/* Mobile Layout - headline in curve area, content below */}
+          <div className="md:hidden min-h-[590px] px-[8px] py-6">
+            <div className="pt-[260px] flex flex-col items-center">
+              <h1 className="text-[2rem] leading-[1.15] font-medium text-white uppercase mb-[14px] max-w-[265px] min-[500px]:max-w-[360px] text-center" style={{fontFamily: "'Inter Tight', sans-serif", letterSpacing: '-0.02em'}} data-testid="text-hero-title">
+                Share your story as a business owner
               </h1>
-              <p className="mt-4 text-white/90 md:text-lg" style={{ textShadow: '0 2px 6px rgba(0, 0, 0, 0.5)' }} data-testid="text-hero-description">
-                We're talking with owners and managers about how they run their businesses — managing finances and cash flow,
-                handling marketing and their website, running day-to-day operations. No selling. Just listening and learning.
+              <p className="text-white text-[14px] leading-relaxed font-normal mb-[12px] px-[10px]" data-testid="text-hero-description">
+                Tell us about running your business—the wins, the challenges, and everything in between. 5-minute survey ($20) or 60-minute interview ($150). Ready to share your insights?
               </p>
-              <div className="mt-8 flex flex-col sm:flex-row gap-4">
-                {/* Primary CTA - Survey */}
+
+              {/* CTA Buttons */}
+              <div className="w-full flex gap-3">
                 <a
                   href="/survey"
-                  className="flex flex-col items-center justify-center rounded-xl bg-[#FF4800] text-white px-8 py-4 hover:bg-[#E04000] hover:scale-105 transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#FF4800]"
-                  style={{ boxShadow: '0 8px 16px rgba(0, 0, 0, 0.4)' }}
+                  className="flex flex-col items-center justify-center rounded-md bg-[#00152a] text-white px-[11px] py-4 flex-1 hover:bg-[#000d1a] transition-all duration-200"
                   data-testid="button-survey-hero"
                 >
-                  <span className="text-lg font-bold">Fill out 5-minute Survey</span>
-                  <span className="text-sm mt-1 opacity-90">Quick $20 Amazon/Zelle Reward</span>
+                  <span className="text-[16px] font-bold leading-tight text-center">Fill out 5-minute Survey</span>
+                  <span className="text-xs opacity-[0.72] text-center">Quick $20 Amazon/Zelle Reward</span>
                 </a>
 
-                {/* Secondary CTA - Study */}
                 <a
                   href="/join"
-                  className="flex flex-col items-center justify-center rounded-xl border-2 border-white/40 bg-white/10 backdrop-blur-sm text-white px-8 py-4 hover:bg-white/20 hover:scale-105 transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2"
-                  style={{ boxShadow: '0 8px 16px rgba(0, 0, 0, 0.4)' }}
+                  className="flex flex-col items-center justify-center rounded-md border border-white/80 text-white px-[11px] py-4 flex-1 hover:bg-white/10 transition-all duration-200"
                   data-testid="button-join-hero"
                 >
-                  <span className="text-lg font-bold">Schedule 60-minute Zoom</span>
-                  <span className="text-sm mt-1 opacity-90">$150 compensation</span>
+                  <span className="text-[16px] font-bold leading-tight text-center">Schedule 60-minute Zoom</span>
+                  <span className="text-xs opacity-[0.72] text-center">$150 compensation</span>
                 </a>
               </div>
-              <p className="mt-5 text-sm text-white/80 text-center sm:text-left" data-testid="text-hero-details">
-                Quick survey or in-depth interview · $20 or $150 compensation · Confidential & Bay Area focused
-              </p>
             </div>
-            
-            {/* Right Column - Voucher Image (Hidden) */}
-            <div className="hidden">
+          </div>
+
+          {/* Tablet Layout */}
+          <div className="hidden md:block lg:hidden min-h-[500px] px-8 py-12">
+            <div className="flex items-center h-full">
+              <div className="max-w-[480px] space-y-6">
+                <h1 className="text-[2rem] leading-[1.15] font-medium text-white uppercase" style={{fontFamily: "'Inter Tight', sans-serif", letterSpacing: '-0.02em'}} data-testid="text-hero-title">
+                  Share your story as a business owner
+                </h1>
+                <p className="text-white text-lg leading-relaxed font-normal" data-testid="text-hero-description">
+                  Tell us about running your business—the wins, the challenges, and everything in between. 5-minute survey ($20) or 60-minute interview ($150). Ready to share your insights?
+                </p>
+                <a
+                  href="/survey"
+                  className="inline-flex items-center justify-center gap-2 rounded-md bg-[#00152a] text-white px-10 py-4 text-lg font-semibold hover:bg-[#000d1a] transition-all duration-200"
+                  data-testid="button-survey-hero"
+                >
+                  <span>Take Survey</span>
+                  <ArrowRight className="w-5 h-5" />
+                </a>
+                <p className="text-sm text-white/95 font-normal" data-testid="text-hero-details">
+                  $20 or $150 compensation · Confidential & nationwide
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* Desktop Layout */}
+          <div className="hidden lg:block min-h-[550px] px-16 py-16">
+            <div className="flex items-center h-full">
+              <div className="max-w-[520px]">
+                <h1 className="text-[2.9375rem] leading-[1.15] font-medium text-white uppercase max-w-[380px] pt-[30px] mb-[19px]" style={{fontFamily: "'Inter Tight', sans-serif", letterSpacing: '-0.02em'}} data-testid="text-hero-title">
+                  Share your story as a business owner
+                </h1>
+                <p className="text-white text-[0.9375rem] leading-relaxed font-normal pr-[140px] mb-[29px]" data-testid="text-hero-description">
+                  Tell us about running your business—the wins, the challenges, and everything in between. 5-minute survey ($20) or 60-minute interview ($150). Ready to share your insights?
+                </p>
+                <div className="flex gap-3">
+                  <a
+                    href="/survey"
+                    className="flex flex-col items-center justify-center rounded-md bg-[#00152a] text-white px-[11px] py-4 flex-1 hover:bg-[#000d1a] transition-all duration-200"
+                    data-testid="button-survey-hero"
+                  >
+                    <span className="text-[16px] font-bold leading-tight text-center">Fill out 5-minute Survey</span>
+                    <span className="text-xs opacity-[0.72] text-center">Quick $20 Amazon/Zelle Reward</span>
+                  </a>
+
+                  <a
+                    href="/join"
+                    className="flex flex-col items-center justify-center rounded-md border border-white/80 text-white px-[11px] py-4 flex-1 hover:bg-white/10 transition-all duration-200"
+                    data-testid="button-join-hero"
+                  >
+                    <span className="text-[16px] font-bold leading-tight text-center">Schedule 60-minute Zoom</span>
+                    <span className="text-xs opacity-[0.72] text-center">$150 compensation</span>
+                  </a>
+                </div>
+                <p className="text-sm text-white/95 font-normal mt-[20px]" data-testid="text-hero-details">
+                  $20 or $150 compensation · Confidential & nationwide
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Badge in top right corner - Desktop only */}
+        <div className="absolute top-6 right-6 z-30 hidden lg:block">
+          <div className="bg-white rounded-lg p-3 shadow-xl">
+            <img src={logo} alt="US Small Business Study" className="h-12 w-12 object-contain" />
+          </div>
+        </div>
+      </section>
+
+      {/* Statistics Section - Pride Building */}
+      <section className="border-t border-[#00152a] bg-[#00152a]">
+        <div className="mx-auto max-w-6xl px-4 py-14">
+          <h2 className="text-2xl md:text-[2.9375rem] md:leading-[1.15] font-medium text-white mb-10 uppercase text-center flex items-center justify-center gap-2" style={{fontFamily: "'Inter Tight', sans-serif", letterSpacing: '-0.02em'}}>
+            <span>Small businesses power America</span>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="-5.0 -10.0 110.0 135.0" className="w-[2.8rem] h-[2.8rem] md:w-[4.2rem] md:h-[4.2rem] inline-block" fill="white">
+              <path d="m50 89.398 6.8008-6.8008h-13.699l6.8008 6.8008zm0-54.797v-12h41.801c-1-1.8008-2.3008-3.5-3.8008-5-9.3008-9.3008-24.5-9.3008-33.801 0l-4.3008 4.3008-4.3008-4.3008c-4.3984-4.3984-10.102-6.6992-15.898-6.8984l0.69922 2.1992c0 0.19922-0.19922 0.39844-0.39844 0.30078l-1.8984-1.3984-1.8984 1.3984c-0.19922 0.10156-0.5 0-0.39844-0.30078l0.69922-2.1992c-5.3984 0.5-10.602 2.8008-14.699 6.8984-3.1992 3.1992-5.3008 7.1992-6.3008 11.398 0 0 0.10156 0 0.10156 0.10156l0.69922 2.3008h2.3984c0.19922 0 0.39844 0.30078 0.19922 0.5l-1.8984 1.3984 0.69922 2.3008c0 0.19922-0.19922 0.39844-0.39844 0.30078l-1.8984-1.3984-0.60156 0.39844c0 4.1016 1.1992 8.1992 3.3008 11.801h83.398c2.1992-3.6992 3.3008-7.8008 3.3008-12h-45zm-40.301-10.801h2.3984l0.69922-2.3008c0-0.19922 0.39844-0.19922 0.5 0l0.69922 2.3008h2.3984c0.19922 0 0.39844 0.30078 0.19922 0.5l-1.8984 1.3984 0.69922 2.3008c0 0.19922-0.19922 0.39844-0.39844 0.30078l-1.8984-1.3984-1.8984 1.3984c-0.19922 0.10156-0.5 0-0.39844-0.30078l0.69922-2.3008-1.8984-1.3984c-0.19922-0.10156 0-0.5 0.19922-0.5zm7.1016 15.699-1.8984 1.3984 0.69922 2.3008c0 0.19922-0.19922 0.39844-0.39844 0.30078l-1.8984-1.3984-1.8984 1.3984c-0.19922 0.10156-0.5 0-0.39844-0.30078l0.69922-2.3008-1.8984-1.3984c-0.19922-0.10156-0.10156-0.5 0.19922-0.5h2.3984l0.69922-2.3008c0-0.19922 0.39844-0.19922 0.5 0l0.69922 2.3008h2.3984c0.30078 0 0.39844 0.30078 0.19922 0.5zm0.39844-23.199h2.3984l0.69922-2.3008c0-0.19922 0.39844-0.19922 0.5 0l0.69922 2.3008h2.3984c0.19922 0 0.39844 0.30078 0.10156 0.5l-1.8984 1.3984 0.69922 2.3008c0 0.19922-0.19922 0.39844-0.39844 0.30078l-1.8984-1.3984-1.8984 1.3984c-0.19922 0.10156-0.5 0-0.39844-0.30078l0.69922-2.3008-1.8984-1.3984c-0.19922-0.10156 0-0.5 0.19922-0.5zm7.1016 15.699-1.8984 1.3984 0.69922 2.3008c0 0.19922-0.19922 0.39844-0.39844 0.30078l-1.8984-1.3984-1.8984 1.3984c-0.19922 0.10156-0.5 0-0.39844-0.30078l0.69922-2.3008-1.8984-1.3984c-0.19922-0.10156-0.10156-0.5 0.10156-0.5h2.3984l0.69922-2.3008c0-0.19922 0.39844-0.19922 0.5 0l0.69922 2.3008h2.3984c0.19922 0 0.39844 0.30078 0.19922 0.5zm0.59766-8h2.3984l0.69922-2.3008c0-0.19922 0.39844-0.19922 0.5 0l0.69922 2.3008h2.3984c0.19922 0 0.39844 0.30078 0.19922 0.5l-1.8984 1.3984 0.69922 2.3008c0 0.19922-0.19922 0.39844-0.39844 0.30078l-1.8984-1.3984-1.8984 1.3984c-0.19922 0.10156-0.5 0-0.39844-0.30078l0.69922-2.3008-1.8984-1.3984c-0.19922-0.10156 0-0.5 0.19922-0.5zm7 15.699-1.8984 1.3984 0.69922 2.3008c0 0.19922-0.19922 0.39844-0.39844 0.30078l-1.8984-1.3984-1.8984 1.3984c-0.19922 0.10156-0.5 0-0.39844-0.30078l0.69922-2.3008-1.8984-1.3984c-0.19922-0.10156-0.10156-0.5 0.10156-0.5h2.3984l0.69922-2.3008c0-0.19922 0.39844-0.19922 0.5 0l0.69922 2.3008h2.3984c0.19922 0 0.39844 0.30078 0.19922 0.5zm7.5-7.5977-1.8984 1.3984 0.69922 2.3008c0 0.19922-0.19922 0.39844-0.39844 0.30078l-1.8984-1.3984-1.8984 1.3984c-0.19922 0.10156-0.5 0-0.39844-0.30078l0.69922-2.3008-1.8984-1.3984c-0.19922-0.10156 0-0.5 0.19922-0.5h2.3984l0.69922-2.3008c0-0.19922 0.39844-0.19922 0.5 0l0.69922 2.3008h2.3984c0.19922 0 0.39844 0.30078 0.19922 0.5zm0-15.203-1.8984 1.3984 0.69922 2.3008c0 0.19922-0.19922 0.39844-0.39844 0.30078l-1.8984-1.3984-1.8984 1.3984c-0.19922 0.10156-0.5 0-0.39844-0.30078l0.69922-2.3008-1.8984-1.3984c-0.19922-0.10156 0-0.5 0.19922-0.5h2.3984l0.69922-2.3008c0-0.19922 0.39844-0.19922 0.5 0l0.69922 2.3008h2.3984c0.19922 0 0.39844 0.30078 0.19922 0.5zm7.5 22.703-1.8984 1.3984 0.69922 2.3008c0 0.19922-0.19922 0.39844-0.39844 0.30078l-1.8984-1.3984-1.8984 1.3984c-0.19922 0.10156-0.5 0-0.39844-0.30078l0.69922-2.3008-1.8984-1.3984c-0.19922-0.10156-0.10156-0.5 0.19922-0.5h2.3984l0.69922-2.3008c0-0.19922 0.39844-0.19922 0.5 0l0.69922 2.3008h2.3984c0.30078 0 0.39844 0.30078 0.19922 0.5zm0-15-1.8984 1.3984 0.69922 2.3008c0 0.19922-0.19922 0.39844-0.39844 0.30078l-1.8984-1.3984-1.8984 1.3984c-0.19922 0.10156-0.5 0-0.39844-0.30078l0.69922-2.3008-1.8984-1.3984c-0.19922-0.10156-0.10156-0.5 0.19922-0.5h2.3984l0.69922-2.3008c0-0.19922 0.39844-0.19922 0.5 0l0.69922 2.3008h2.3984c0.30078 0 0.39844 0.30078 0.19922 0.5zm-15.699 46h37.699l12-12h-61.699z"/>
+            </svg>
+          </h2>
+          <div className="grid md:grid-cols-[1.5fr_1fr] gap-10 items-center">
+            {/* Left - Statistics */}
+            <div>
+              <p className="text-white/90 leading-relaxed mb-8 pr-5">
+                You're part of the backbone of the US economy. Your insights help us understand the real challenges and
+                opportunities facing small businesses across the country.
+              </p>
+              <div className="grid grid-cols-2 gap-6">
+                <div className="space-y-1">
+                  <div className="text-[63px] md:text-[76px] font-thin text-white leading-none">34.8M</div>
+                  <div className="text-sm text-white/80">Small businesses in the US</div>
+                </div>
+                <div className="space-y-1">
+                  <div className="text-[63px] md:text-[76px] font-thin text-white leading-none">59M</div>
+                  <div className="text-sm text-white/80">Americans employed</div>
+                </div>
+                <div className="space-y-1">
+                  <div className="text-[63px] md:text-[76px] font-thin text-white leading-none">46%</div>
+                  <div className="text-sm text-white/80">Of US workforce</div>
+                </div>
+                <div className="space-y-1">
+                  <div className="text-[63px] md:text-[76px] font-thin text-white leading-none">43.5%</div>
+                  <div className="text-sm text-white/80">Of US GDP</div>
+                </div>
+              </div>
+              <p className="text-sm text-white/70 mt-6 italic">Source: US Small Business Administration, 2024</p>
+            </div>
+
+            {/* Right - Image */}
+            <div className="flex justify-center">
               <img
-                src={rewardImage}
-                alt="$150 compensation - Amazon gift card, Venmo, or Zelle"
-                className="w-[300px] h-auto rounded-xl shadow-lg"
-                data-testid="img-reward-hero"
+                src={amexMapImage}
+                alt="Map of small businesses across America"
+                className="w-[120%] max-w-[480px] h-auto rounded-xl shadow-lg dark:shadow-none"
               />
             </div>
           </div>
         </div>
       </section>
 
-      <section id="why" className="border-t border-neutral-200 dark:border-neutral-800 bg-[#B3995D]/10 dark:bg-neutral-800">
-        <div className="mx-auto max-w-6xl px-4 py-14">
-          {/* Full-width centered title */}
-          <h2 className="text-2xl md:text-3xl font-bold text-center mb-10 text-neutral-900 dark:text-neutral-100" data-testid="text-why-title">
-            Why we're doing this
-          </h2>
+      <section id="why" className="border-t border-neutral-200 dark:border-neutral-800 bg-[#F5F1E8] dark:bg-neutral-800">
+        <div className="grid md:grid-cols-2">
+          {/* Left Column - Image (Full Height) */}
+          <div className="h-full min-h-[400px] md:min-h-[600px]">
+            <img
+              src={agencyImage}
+              alt="Small business team collaborating in meeting"
+              className="w-full h-full object-cover"
+            />
+          </div>
 
-          {/* Two-column layout below */}
-          <div className="grid md:grid-cols-2 gap-10 items-start">
-            {/* Left Column - Paragraphs */}
-            <div className="space-y-6">
-              <p className="text-neutral-600 dark:text-neutral-300 leading-relaxed" data-testid="text-why-paragraph-1">
-                Running a small business here isn't easy. Between managing finances, keeping up with marketing, maintaining your website,
-                handling operations, and everything else — it can feel like you're juggling ten jobs at once.
+          {/* Right Column - Content */}
+          <div className="px-4 md:px-12 py-14 flex flex-col justify-center">
+            <h2 className="text-2xl md:text-[2.9375rem] md:leading-[1.15] font-medium mb-10 text-neutral-900 dark:text-neutral-100 uppercase" style={{fontFamily: "'Inter Tight', sans-serif", letterSpacing: '-0.02em'}} data-testid="text-why-title">
+              Why your voice matters
+            </h2>
+
+            <div className="space-y-6 mb-8">
+              <p className="text-neutral-600 dark:text-neutral-300 leading-relaxed text-lg" data-testid="text-why-paragraph-1">
+                Running a small business means juggling everything—finances, marketing, operations, and more.
+                You know what works and what doesn't because you live it every day.
               </p>
               <p className="text-neutral-600 dark:text-neutral-300 leading-relaxed" data-testid="text-why-paragraph-2">
-                We're mapping how Bay Area small businesses actually run day-to-day — what works, what breaks, and what improvements would genuinely help.
-                This is independent research, not a product pitch.
+                We're documenting how small businesses really operate across America. No product pitch. No agenda.
+                Just learning from the people who make it happen.
               </p>
             </div>
 
-            {/* Right Column - Bullet Points */}
-            <ul className="space-y-4 text-neutral-900 dark:text-neutral-100">
+            <div className="grid grid-cols-1 gap-6">
               {[
-                { t: "Honest conversations", d: "Quick surveys or one-on-one chats focused on your existing process — tools, routines, workarounds, and pain points." },
-                { t: "Local focus", d: "Centering Bay Area businesses across SF, East Bay, Peninsula, South Bay, North Bay." },
-                { t: "Respect for your time", d: "Choose 5 minutes ($20) or 60 minutes ($150). Remote or optional in-person for interviews." },
+                { t: "Quick", d: "5-minute survey ($20)" },
+                { t: "In-Depth", d: "60-minute conversation ($150)" },
+                { t: "Confidential", d: "Your name stays private" },
               ].map((item, idx) => (
-                <li key={item.t} className="flex gap-3" data-testid={`list-item-why-${idx}`}>
-                  <span className="mt-1 h-2.5 w-2.5 rounded-full bg-black dark:bg-white flex-shrink-0" />
-                  <div>
-                    <p className="font-semibold">{item.t}</p>
-                    <p className="text-neutral-500 dark:text-neutral-400 text-sm">{item.d}</p>
-                  </div>
-                </li>
+                <div key={item.t} className="space-y-1" data-testid={`list-item-why-${idx}`}>
+                  <div className="text-[48px] md:text-[56px] font-thin text-neutral-900 dark:text-neutral-100 leading-none">{item.t}</div>
+                  <div className="text-sm text-neutral-600 dark:text-neutral-400">{item.d}</div>
+                </div>
               ))}
-            </ul>
+            </div>
           </div>
         </div>
       </section>
 
       <section id="about" className="border-t border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-900">
-        <div className="mx-auto max-w-6xl px-4 py-14">
-          <h2 className="text-2xl md:text-3xl font-bold text-center text-neutral-900 dark:text-neutral-100" data-testid="text-what-title">What participation involves</h2>
-          <div className="mt-8 grid gap-6 sm:grid-cols-3">
-            {[
-              { Icon: Clock, title: "Flexible options", desc: "Choose a quick 5-minute survey or in-depth 60-minute interview (remote or in-person)." },
-              { Icon: MessageCircle, title: "Share your story", desc: "Tell us about your business day-to-day — tools, challenges, and what works for you." },
-              { Icon: DollarSign, title: "$20 or $150", desc: "Get compensated for your time via Amazon gift card, Venmo, or Zelle." },
-            ].map((c, idx) => (
-              <div key={c.title} className="rounded-xl border border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-800 p-6 shadow-xl shadow-slate-200 dark:shadow-none" data-testid={`card-what-${idx}`}>
-                <c.Icon className="w-8 h-8 text-[#FF4800]" />
-                <h3 className="mt-3 font-semibold text-neutral-900 dark:text-neutral-100">{c.title}</h3>
-                <p className="mt-2 text-neutral-500 dark:text-neutral-400 text-sm">{c.desc}</p>
-              </div>
-            ))}
+        <div className="grid md:grid-cols-2">
+          {/* Left Column - Content */}
+          <div className="px-4 md:px-12 py-14 flex flex-col justify-center">
+            <h2 className="text-2xl md:text-[2.9375rem] md:leading-[1.15] font-medium mb-10 text-neutral-900 dark:text-neutral-100 uppercase" style={{fontFamily: "'Inter Tight', sans-serif", letterSpacing: '-0.02em'}} data-testid="text-what-title">
+              What participation involves
+            </h2>
+
+            <div className="grid grid-cols-1 gap-6">
+              {[
+                { t: "Flexible options", d: "Choose a quick 5-minute survey or in-depth 60-minute interview (remote or in-person)." },
+                { t: "Share your story", d: "Tell us about your business day-to-day — tools, challenges, and what works for you." },
+                { t: "$20 or $150", d: "Get compensated for your time via Amazon gift card, Venmo, or Zelle." },
+              ].map((item, idx) => (
+                <div key={item.t} className="space-y-1" data-testid={`card-what-${idx}`}>
+                  <div className="text-[48px] md:text-[56px] font-thin text-neutral-900 dark:text-neutral-100 leading-none">{item.t}</div>
+                  <div className="text-sm text-neutral-600 dark:text-neutral-400">{item.d}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Right Column - Image (Full Height) */}
+          <div className="h-full min-h-[400px] md:min-h-[600px]">
+            <img
+              src={coffeeShopImage}
+              alt="Busy small business coffee shop"
+              className="w-full h-full object-cover"
+            />
           </div>
         </div>
       </section>
 
-      {/* Location Section */}
-      <section id="who" className="border-t border-neutral-200 dark:border-neutral-800 bg-[#B3995D]/10 dark:bg-neutral-800">
-        <div className="mx-auto max-w-6xl px-4 py-14">
-          <h2 className="text-2xl md:text-3xl font-bold text-center text-neutral-900 dark:text-neutral-100" data-testid="text-who-title">Who we'd love to hear from</h2>
+      {/* Who Section with Business Type Images */}
+      <section id="who" className="border-t border-neutral-200 dark:border-neutral-800 bg-[#eeebe7] dark:bg-neutral-800">
+        <div className="mx-auto max-w-6xl px-1 md:px-2 py-14">
+          <h2 className="text-2xl md:text-[2.9375rem] md:leading-[1.15] font-medium text-center text-neutral-900 dark:text-neutral-100 mb-10 uppercase px-4" style={{fontFamily: "'Inter Tight', sans-serif", letterSpacing: '-0.02em'}} data-testid="text-who-title">
+            We want to hear from you
+          </h2>
 
-          <div className="mt-10 grid md:grid-cols-[1fr_auto] gap-10 items-start">
-            {/* Left Column - Text Content */}
-            <div className="space-y-6">
-              <div className="space-y-2">
-                <p className="text-neutral-700 dark:text-neutral-200 font-bold">
-                  Roles of people who we would love to speak to:
-                </p>
-                <p className="text-neutral-600 dark:text-neutral-300 leading-relaxed" data-testid="text-who-description">
-                  Owners, general managers, or ops leads at small businesses (ideally 2–100 employees) who handle
-                  day-to-day operations — finances, marketing, website management, or running the business.
-                </p>
-              </div>
-
-              <div className="space-y-2">
-                <p className="text-neutral-700 dark:text-neutral-200 font-bold" data-testid="text-who-counties">
-                  We work with businesses from:
-                </p>
-                <p className="text-neutral-600 dark:text-neutral-300 leading-relaxed">
-                  San Francisco, Marin, Sonoma, Napa, Contra Costa, Alameda, San Mateo, Santa Clara, and Solano Counties.
-                </p>
-              </div>
-
-              <div className="space-y-2">
-                <p className="text-neutral-700 dark:text-neutral-200 font-bold">
-                  Types of businesses we work with:
-                </p>
-                <p className="text-neutral-600 dark:text-neutral-300 leading-relaxed">
-                  Restaurants & cafés, Retail & boutiques, Health & wellness, Trades & construction, Professional services, Creative & tech, Nonprofits, Manufacturing and more.
-                </p>
-              </div>
+          <div className="space-y-8">
+            <div className="text-center max-w-3xl mx-auto px-4">
+              <p className="text-neutral-600 dark:text-neutral-300 leading-relaxed text-lg" data-testid="text-who-description">
+                Owners, managers, or operations leads at businesses with 2–100 employees who handle finances, marketing,
+                operations, or day-to-day business decisions.
+              </p>
             </div>
-            
-            {/* Right Column - Map Image (70% size) */}
-            <div className="hidden md:block">
-              <img
-                src={bayAreaMap}
-                alt="Map of Bay Area subregions including San Francisco, East Bay, Peninsula, South Bay, and North Bay, covering San Francisco, Marin, Sonoma, Napa, Contra Costa, Alameda, San Mateo, Santa Clara, and Solano Counties"
-                className="w-[345px] h-auto rounded-xl border border-neutral-200 shadow-lg dark:hidden"
-                data-testid="img-bay-area-map"
-              />
-              <img
-                src={bayAreaMapDark}
-                alt="Map of Bay Area subregions including San Francisco, East Bay, Peninsula, South Bay, and North Bay, covering San Francisco, Marin, Sonoma, Napa, Contra Costa, Alameda, San Mateo, Santa Clara, and Solano Counties"
-                className="w-[345px] h-auto rounded-xl hidden dark:block"
-                data-testid="img-bay-area-map-dark"
-              />
-            </div>
-          </div>
 
-          {/* Mobile Map - Full Width */}
-          <div className="md:hidden mt-6">
-            <img
-              src={bayAreaMap}
-              alt="Map of Bay Area subregions including San Francisco, East Bay, Peninsula, South Bay, and North Bay, covering San Francisco, Marin, Sonoma, Napa, Contra Costa, Alameda, San Mateo, Santa Clara, and Solano Counties"
-              className="w-full h-auto rounded-xl border border-neutral-200 shadow-lg dark:hidden"
-              data-testid="img-bay-area-map-mobile"
-            />
-            <img
-              src={bayAreaMapDark}
-              alt="Map of Bay Area subregions including San Francisco, East Bay, Peninsula, South Bay, and North Bay, covering San Francisco, Marin, Sonoma, Napa, Contra Costa, Alameda, San Mateo, Santa Clara, and Solano Counties"
-              className="w-full h-auto rounded-xl hidden dark:block"
-              data-testid="img-bay-area-map-mobile-dark"
-            />
+            {/* Business Types Grid with Images */}
+            <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-2 mt-10">
+              {[
+                { img: salonImage, label: "Health & Wellness" },
+                { img: boutiqueImage, label: "Retail & Boutiques" },
+                { img: constructionImage, label: "Trades & Construction" },
+                { img: legalImage, label: "Professional Services" },
+                { img: architectImage, label: "Creative & Design" },
+                { img: manufacturingImage, label: "Manufacturing" },
+                { img: coffeeShopImage, label: "Food & Beverage" },
+                { img: agencyImage, label: "Marketing & Tech" },
+              ].map((business, idx) => (
+                <div key={idx} className="relative rounded-xl overflow-hidden group cursor-default">
+                  <img
+                    src={business.img}
+                    alt={business.label}
+                    className="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent flex items-end">
+                    <p className="text-white font-semibold p-4 text-sm">{business.label}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            <div className="text-center mt-8">
+              <p className="text-neutral-600 dark:text-neutral-300">
+                From all 50 states—major cities, small towns, and everything in between.
+              </p>
+            </div>
           </div>
         </div>
       </section>
@@ -306,11 +444,11 @@ export default function Home() {
 
       <section id="join" className="border-t border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-900">
         <div className="mx-auto max-w-7xl px-4 py-14">
-          <h2 className="text-2xl md:text-3xl font-bold text-center mb-10 text-neutral-900 dark:text-neutral-100" data-testid="text-join-title">Join the study</h2>
+          <h2 className="text-2xl md:text-[2.9375rem] md:leading-[1.15] font-medium text-center mb-10 text-neutral-900 dark:text-neutral-100 uppercase" style={{fontFamily: "'Inter Tight', sans-serif", letterSpacing: '-0.02em'}} data-testid="text-join-title">Join the study</h2>
 
           <p className="text-neutral-600 dark:text-neutral-300 leading-relaxed text-center max-w-3xl mx-auto mb-10" data-testid="text-join-description">
             Choose your participation level: take a quick 5-minute survey or schedule a 60-minute interview.
-            Both options are confidential and help us understand Bay Area small businesses better.
+            Both options are confidential and help us understand how small businesses operate across America.
           </p>
 
           {/* Three-column layout */}
@@ -319,8 +457,8 @@ export default function Home() {
             <div className="flex justify-center">
               <img
                 src={businessCollage}
-                alt="Diverse group of Bay Area small business owners from various industries including retail, restaurants, and services"
-                className="w-full max-w-[400px] h-auto rounded-xl border border-neutral-200 dark:border-0 shadow-lg dark:shadow-none"
+                alt="Diverse group of small business owners from various industries including retail, restaurants, and services"
+                className="w-full max-w-[400px] h-auto rounded-xl shadow-lg dark:shadow-none"
                 data-testid="img-business-collage"
               />
             </div>
@@ -347,7 +485,7 @@ export default function Home() {
 
                 <a
                   href="/survey"
-                  className="flex flex-col items-center justify-center rounded-xl bg-[#FF4800] text-white px-8 py-4 w-full hover:bg-[#E04000] hover:scale-105 transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#FF4800] focus-visible:ring-offset-2"
+                  className="flex flex-col items-center justify-center rounded-xl bg-[#df2b1e] text-white px-8 py-4 w-full hover:bg-[#c92719] hover:scale-105 transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#df2b1e] focus-visible:ring-offset-2"
                   data-testid="button-survey-join-section"
                 >
                   <span className="text-lg font-bold">Fill out 5-minute Survey</span>
@@ -365,7 +503,7 @@ export default function Home() {
                   </div>
                   <div className="flex items-center gap-2">
                     <span>✓</span>
-                    <span>Remote or in-person</span>
+                    <span>Remote via Zoom</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <span>✓</span>
@@ -375,7 +513,7 @@ export default function Home() {
 
                 <a
                   href="/join"
-                  className="flex flex-col items-center justify-center rounded-xl border-2 border-[#FF4800] text-[#FF4800] px-8 py-4 w-full hover:bg-[#FF4800] hover:text-white hover:scale-105 transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#FF4800] focus-visible:ring-offset-2"
+                  className="flex flex-col items-center justify-center rounded-xl border-2 border-[#004f91] text-[#004f91] px-8 py-4 w-full hover:bg-[#004f91] hover:text-white hover:scale-105 transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#004f91] focus-visible:ring-offset-2"
                   data-testid="button-join-section"
                 >
                   <span className="text-lg font-bold">Schedule 60-minute Zoom</span>
@@ -388,9 +526,9 @@ export default function Home() {
       </section>
 
       {testimonials && testimonials.length > 0 && (
-        <section className="border-t border-neutral-200 dark:border-neutral-800 bg-[#B3995D]/10 dark:bg-neutral-800">
+        <section className="border-t border-neutral-200 dark:border-neutral-800 bg-[#F5F1E8] dark:bg-neutral-800">
           <div className="mx-auto max-w-6xl px-4 py-14">
-            <h2 className="text-2xl md:text-3xl font-bold text-center text-neutral-900 dark:text-neutral-100" data-testid="text-testimonials-title">
+            <h2 className="text-2xl md:text-[2.9375rem] md:leading-[1.15] font-medium text-center text-neutral-900 dark:text-neutral-100 uppercase mb-10" style={{fontFamily: "'Inter Tight', sans-serif", letterSpacing: '-0.02em'}} data-testid="text-testimonials-title">
               What other business owners are saying
             </h2>
             <div className="mt-10 grid gap-6 md:grid-cols-3">
@@ -431,18 +569,18 @@ export default function Home() {
         </section>
       )}
 
-      <section id="faq" className="border-t border-neutral-200 dark:border-neutral-800 bg-[#B3995D]/10 dark:bg-neutral-900">
+      <section id="faq" className="border-t border-neutral-200 dark:border-neutral-800 bg-[#eeebe7] dark:bg-neutral-900">
         <div className="mx-auto max-w-6xl px-4 py-14">
-          <h2 className="text-2xl md:text-3xl font-bold text-center text-neutral-900 dark:text-neutral-100" data-testid="text-faq-title">Frequently asked questions</h2>
+          <h2 className="text-2xl md:text-[2.9375rem] md:leading-[1.15] font-medium text-center text-neutral-900 dark:text-neutral-100 uppercase mb-10" style={{fontFamily: "'Inter Tight', sans-serif", letterSpacing: '-0.02em'}} data-testid="text-faq-title">Frequently asked questions</h2>
           <div className="mt-8 grid gap-6 md:grid-cols-2">
             {[
               {
                 q: "What are my participation options?",
-                a: "You can choose between a quick 5-minute survey ($20 reward via Amazon gift card or Zelle) or a 60-minute interview ($150 via Amazon gift card, Venmo, or Zelle). Both help us understand Bay Area small businesses.",
+                a: "You can choose between a quick 5-minute survey ($20 reward via Amazon gift card or Zelle) or a 60-minute interview ($150 via Amazon gift card, Venmo, or Zelle). Both help us understand small businesses nationwide.",
               },
               {
                 q: "Who's eligible to participate?",
-                a: "Bay Area small business owners, managers, or ops leads who handle day-to-day business operations (finances, marketing, website, operations). Ideally businesses with 2–100 employees.",
+                a: "Small business owners, managers, or ops leads across the United States who handle day-to-day business operations (finances, marketing, website, operations). Ideally businesses with 2–100 employees.",
               },
               {
                 q: "How and when do I get paid?",
@@ -480,16 +618,16 @@ export default function Home() {
 
       <section className="border-t border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-900">
         <div className="mx-auto max-w-6xl px-4 py-14">
-          <h2 className="text-2xl md:text-3xl font-bold text-center mb-4 text-neutral-900 dark:text-neutral-100" data-testid="text-share-title">
-            Know someone who would be a good fit?
+          <h2 className="text-2xl md:text-[2.9375rem] md:leading-[1.15] font-medium text-center mb-4 text-neutral-900 dark:text-neutral-100 uppercase" style={{fontFamily: "'Inter Tight', sans-serif", letterSpacing: '-0.02em'}} data-testid="text-share-title">
+            Know a business owner?
           </h2>
           <p className="text-center text-neutral-600 dark:text-neutral-300 mb-8 max-w-2xl mx-auto">
-            Share this study with other Bay Area business owners in your network.
+            Share this study with other small business owners in your network.
           </p>
 
           <div className="flex flex-wrap justify-center gap-4">
             <a
-              href={`https://wa.me/?text=${encodeURIComponent('Check out this Bay Area small business research study - $20 for a 5-min survey or $150 for a 60-min interview: ' + window.location.href)}`}
+              href={`https://wa.me/?text=${encodeURIComponent('Check out this small business research study - $20 for a 5-min survey or $150 for a 60-min interview: ' + window.location.href)}`}
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-2 rounded-lg border-2 border-[#25D366] text-[#25D366] px-6 py-3 font-semibold hover:bg-[#25D366] hover:text-white transition-all duration-200"
@@ -500,8 +638,8 @@ export default function Home() {
             </a>
 
             <a
-              href={`mailto:?subject=${encodeURIComponent('Bay Area Small Business Study')}&body=${encodeURIComponent('I thought you might be interested in this research study for Bay Area small business owners.\n\nYou can earn $20 for a 5-minute survey or $150 for a 60-minute interview by sharing your experience managing a business.\n\nLearn more: ' + window.location.href)}`}
-              className="flex items-center gap-2 rounded-lg border-2 border-[#FF4800] text-[#FF4800] px-6 py-3 font-semibold hover:bg-[#FF4800] hover:text-white transition-all duration-200"
+              href={`mailto:?subject=${encodeURIComponent('Small Business Research Study')}&body=${encodeURIComponent('I thought you might be interested in this research study for small business owners nationwide.\n\nYou can earn $20 for a 5-minute survey or $150 for a 60-minute interview by sharing your experience managing a business.\n\nLearn more: ' + window.location.href)}`}
+              className="flex items-center gap-2 rounded-lg border-2 border-[#004f91] text-[#004f91] px-6 py-3 font-semibold hover:bg-[#004f91] hover:text-white transition-all duration-200"
               data-testid="button-share-email"
             >
               <Mail className="w-5 h-5" />
@@ -509,8 +647,8 @@ export default function Home() {
             </a>
 
             <a
-              href={`sms:?&body=${encodeURIComponent('Check out this Bay Area business study - $20 for a 5-min survey or $150 for a 60-min interview: ' + window.location.href)}`}
-              className="flex items-center gap-2 rounded-lg border-2 border-[#FF4800] text-[#FF4800] px-6 py-3 font-semibold hover:bg-[#FF4800] hover:text-white transition-all duration-200"
+              href={`sms:?&body=${encodeURIComponent('Check out this small business study - $20 for a 5-min survey or $150 for a 60-min interview: ' + window.location.href)}`}
+              className="flex items-center gap-2 rounded-lg border-2 border-[#004f91] text-[#004f91] px-6 py-3 font-semibold hover:bg-[#004f91] hover:text-white transition-all duration-200"
               data-testid="button-share-sms"
             >
               <Phone className="w-5 h-5" />
@@ -520,14 +658,17 @@ export default function Home() {
         </div>
       </section>
 
-      <footer className="border-t border-neutral-200 dark:border-neutral-800 bg-[#B3995D]/10 dark:bg-neutral-800">
+      <footer className="border-t border-neutral-200 dark:border-neutral-800 bg-[#F5F1E8] dark:bg-neutral-800">
         <div className="mx-auto max-w-6xl px-4 py-8">
-          <p className="text-center text-sm text-neutral-400 dark:text-neutral-500" data-testid="text-footer">
-            Bay Area Small Business Study · Independent Research Initiative
-          </p>
-          <p className="text-center text-sm text-neutral-400 dark:text-neutral-500 mt-2">
-            <a href="/privacy" className="hover:text-neutral-600 dark:hover:text-neutral-300 transition-colors">Privacy Policy</a>
-          </p>
+          <div className="flex flex-col items-center gap-4">
+            <img src={footerFlag} alt="US Flag" className="h-12 w-12 object-contain" />
+            <p className="text-center text-sm text-neutral-400 dark:text-neutral-500" data-testid="text-footer">
+              US Small Business Research Study · Independent Research Initiative
+            </p>
+            <p className="text-center text-sm text-neutral-400 dark:text-neutral-500">
+              <a href="/privacy" className="hover:text-neutral-600 dark:hover:text-neutral-300 transition-colors">Privacy Policy</a>
+            </p>
+          </div>
         </div>
       </footer>
     </div>
