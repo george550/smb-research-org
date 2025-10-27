@@ -296,11 +296,11 @@ export default function Home() {
             </div>
 
             {/* Right - Image */}
-            <div className="flex justify-center">
+            <div className="flex justify-center px-2.5 md:px-0">
               <img
                 src={amexMapImage}
                 alt="Map of small businesses across America"
-                className="w-[120%] max-w-[480px] h-auto rounded-xl shadow-lg dark:shadow-none"
+                className="w-full md:w-[120%] max-w-[480px] h-auto rounded-xl shadow-lg dark:shadow-none"
               />
             </div>
           </div>
