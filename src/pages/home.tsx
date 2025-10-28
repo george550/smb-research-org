@@ -110,7 +110,7 @@ export default function Home() {
 
       <section id="top" className="relative overflow-hidden">
         {/* Background Image - positioned to show faces in upper area */}
-        <div className="absolute md:left-[50px] md:top-0 min-[450px]:-top-[100px] -top-[50px] left-0 w-full md:h-full h-auto z-0">
+        <div className="absolute md:left-[50px] md:top-0 min-[450px]:-top-[100px] -top-[30px] left-0 w-full md:h-full h-auto z-0">
           <picture className="block w-full h-full">
             <source
               media="(max-width: 767px)"
@@ -138,16 +138,23 @@ export default function Home() {
             </svg>
           </div>
 
-          {/* Tablet: curved shape from left, wider coverage - extended to 1024px */}
-          <div className="hidden md:block min-[1200px]:hidden absolute inset-0">
+          {/* Tablet: curved shape from left, wider coverage - 768px to 932px */}
+          <div className="hidden md:block min-[932px]:hidden absolute inset-0">
             <svg viewBox="0 0 100 100" preserveAspectRatio="none" className="absolute inset-0 w-full h-full">
               <path d="M 0,0 L 0,100 L 65,100 Q 75,50 65,0 Z" fill="#006fcf" />
             </svg>
           </div>
 
-          {/* Desktop: curved shape from left, pushed right 100px - starts at 1200px */}
+          {/* Mid-size: fixed blue background, only image scales - 932px to 1200px */}
+          <div className="hidden min-[932px]:block min-[1200px]:hidden absolute inset-0">
+            <svg viewBox="0 0 100 100" preserveAspectRatio="none" className="absolute inset-0 w-full h-full">
+              <path d="M 0,0 L 0,100 L 65,100 Q 75,50 65,0 Z" fill="#006fcf" />
+            </svg>
+          </div>
+
+          {/* Desktop: curved shape from left, narrower - starts at 1200px */}
           <div className="hidden min-[1200px]:block absolute inset-0">
-            <svg viewBox="0 0 100 100" preserveAspectRatio="none" className="absolute inset-0 w-full h-full" style={{transform: 'translateX(100px)'}}>
+            <svg viewBox="0 0 100 100" preserveAspectRatio="none" className="absolute inset-0 w-full h-full">
               <path d="M 0,0 L 0,100 L 45,100 Q 55,50 45,0 Z" fill="#006fcf" />
             </svg>
           </div>
@@ -361,15 +368,15 @@ export default function Home() {
       </section>
 
       {/* Who Section with Business Type Images */}
-      <section id="who" className="border-t border-neutral-200 dark:border-neutral-800 bg-[#eeebe7] dark:bg-neutral-800">
+      <section id="who" className="border-t border-[#00152a] bg-[#00152a]">
         <div className="pt-14 pb-0">
-          <h2 className="text-2xl md:text-[2.9375rem] md:leading-[1.15] font-medium text-center text-neutral-900 dark:text-neutral-100 mb-10 uppercase px-4" style={{fontFamily: "'Inter Tight', sans-serif", letterSpacing: '-0.02em'}} data-testid="text-who-title">
+          <h2 className="text-2xl md:text-[2.9375rem] md:leading-[1.15] font-medium text-center text-white mb-10 uppercase px-4" style={{fontFamily: "'Inter Tight', sans-serif", letterSpacing: '-0.02em'}} data-testid="text-who-title">
             We want to hear from you
           </h2>
 
           <div className="space-y-8">
             <div className="text-center max-w-3xl mx-auto px-4">
-              <p className="text-neutral-600 dark:text-neutral-300 leading-relaxed text-lg" data-testid="text-who-description">
+              <p className="text-white/90 leading-relaxed text-lg" data-testid="text-who-description">
                 Owners, managers, or operations leads at businesses with 2–100 employees who handle finances, marketing,
                 operations, or day-to-day business decisions. From all 50 states—major cities, small towns, and everything in between.
               </p>
