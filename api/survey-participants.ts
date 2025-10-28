@@ -63,7 +63,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     };
 
     const mappedMarketingChannels = (formData.marketingChannels || []).map(
-      channel => marketingChannelMapping[channel] || channel
+      (channel: string) => marketingChannelMapping[channel] || channel
     );
 
     const fields: any = {
@@ -94,7 +94,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 
     return res.status(201).json({
       message: "Survey submitted successfully",
-      participantId: record.id
+      participantId: record.getId()
     });
   } catch (error: any) {
     console.error("Survey submission error:", error);

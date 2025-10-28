@@ -1,8 +1,5 @@
 import { useEffect } from "react";
 import { Clock, MessageCircle, DollarSign, Quote, ArrowRight, Share2, Mail, Phone } from "lucide-react";
-import { useQuery } from "@tanstack/react-query";
-import type { Testimonial } from "@shared/schema";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import logo from "@assets/us-flag.svg";
 import footerFlag from "@assets/us-flag-footer.svg";
 import headerImage from "@assets/header.jpg";
@@ -23,10 +20,6 @@ import owner2 from "@assets/stock_images/professional_small_b_eb8b2508.jpg";
 import owner3 from "@assets/stock_images/professional_small_b_c4fcf51f.jpg";
 
 export default function Home() {
-  const { data: testimonials, isLoading: testimonialsLoading } = useQuery<Testimonial[]>({
-    queryKey: ["/api/testimonials"],
-  });
-
   useEffect(() => {
     if (typeof window !== "undefined") {
       document.documentElement.style.scrollBehavior = "smooth";

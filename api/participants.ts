@@ -77,7 +77,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 
     return res.status(201).json({
       message: "Application submitted successfully",
-      participantId: record.id
+      participantId: record.getId()
     });
   } catch (error: any) {
     console.error("Participant submission error:", error);

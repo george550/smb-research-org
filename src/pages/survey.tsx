@@ -11,7 +11,7 @@ import { useMutation } from "@tanstack/react-query";
 import { Loader2, Clock, MessageCircle, DollarSign, Mail } from "lucide-react";
 import footerFlag from "@assets/us-flag-footer.svg";
 
-const roleOptions = ["I own the business", "I manage operations or finances", "I'm an employee, not involved in payments", "I'm self-employed or freelance only"];
+const roleOptions = ["I own the business", "I manage operations or finances"];
 const employeeCountOptions = ["1–2", "3–10", "11–50", "51–100", "Over 100"];
 const responsibilityOptions = ["Sending invoices or collecting customer payments", "Paying suppliers or vendors", "Running payroll or paying staff", "Paying taxes or compliance payments", "Reviewing cash flow reports or bank balances", "None of the above"];
 const toolOptions = ["QuickBooks / Xero", "Stripe / Square / Clover / Toast / POS", "Chase / Bank of America / Wells Fargo portals", "Excel / Google Sheets", "Other (please specify)", "None, not sure"];
