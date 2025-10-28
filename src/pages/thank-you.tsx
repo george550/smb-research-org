@@ -58,12 +58,12 @@ export default function ThankYou() {
               Know someone who would be a good fit?
             </h3>
             <p className="text-neutral-600 dark:text-neutral-300 text-center max-w-xl mx-auto">
-              Share this study with other Bay Area business owners in your network.
+              Share this study with other small business owners in your network.
             </p>
 
             <div className="flex flex-wrap justify-center gap-3">
               <a
-                href={`mailto:?subject=${encodeURIComponent('Bay Area Small Business Study')}&body=${encodeURIComponent('I thought you might be interested in this research study for Bay Area small business owners.\n\nYou can earn $20 for a 5-minute survey or $150 for a 60-minute interview by sharing your experience managing a business.\n\nLearn more: ' + window.location.origin)}`}
+                href={`mailto:?subject=${encodeURIComponent('US Small Business Study')}&body=${encodeURIComponent('I thought you might be interested in this research study for US small business owners.\n\nYou can earn $20 for a 5-minute survey or $150 for a 60-minute interview by sharing your experience managing a business.\n\nLearn more: ' + window.location.origin)}`}
                 className="inline-flex items-center gap-1.5 rounded-md border border-[#00152a] text-[#00152a] px-4 py-2.5 text-sm font-bold hover:bg-[#00152a] hover:text-white transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#00152a] focus-visible:ring-offset-2"
                 data-testid="button-share-email"
               >
@@ -72,7 +72,7 @@ export default function ThankYou() {
               </a>
 
               <a
-                href={`https://wa.me/?text=${encodeURIComponent('Check out this Bay Area small business research study - $20 for a 5-min survey or $150 for a 60-min interview: ' + window.location.origin)}`}
+                href={`https://wa.me/?text=${encodeURIComponent('Check out this US small business research study - $20 for a 5-min survey or $150 for a 60-min interview: ' + window.location.origin)}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-1.5 rounded-md border border-[#00152a] text-[#00152a] px-4 py-2.5 text-sm font-bold hover:bg-[#00152a] hover:text-white transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#00152a] focus-visible:ring-offset-2"
@@ -86,7 +86,7 @@ export default function ThankYou() {
               </a>
 
               <a
-                href={`sms:?&body=${encodeURIComponent('Check out this Bay Area business study - $20 for a 5-min survey or $150 for a 60-min interview: ' + window.location.origin)}`}
+                href={`sms:?&body=${encodeURIComponent('Check out this US small business research study - $20 for a 5-min survey or $150 for a 60-min interview: ' + window.location.origin)}`}
                 className="inline-flex items-center gap-1.5 rounded-md border border-[#00152a] text-[#00152a] px-4 py-2.5 text-sm font-bold hover:bg-[#00152a] hover:text-white transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#00152a] focus-visible:ring-offset-2"
                 data-testid="button-share-sms"
               >

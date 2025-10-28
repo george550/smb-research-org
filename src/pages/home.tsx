@@ -355,7 +355,7 @@ export default function Home() {
               {[
                 { t: "Flexible options", d: "Choose a quick 5-minute survey or in-depth 60-minute interview (remote or in-person)." },
                 { t: "Share your story", d: "Tell us about your business day-to-day — tools, challenges, and what works for you." },
-                { t: "$20 or $150", d: "Get compensated for your time via Amazon gift card, Venmo, or Zelle." },
+                { t: "$20 or $150", d: "Get compensated for your time via Amazon gift card, Venmo, or Zelle. Compensation based on interview length." },
               ].map((item, idx) => (
                 <div key={item.t} className="space-y-1" data-testid={`card-what-${idx}`}>
                   <div className="text-[45px] md:text-[53px] font-thin text-neutral-900 dark:text-neutral-100 leading-none">{item.t}</div>
@@ -420,76 +420,25 @@ export default function Home() {
             Both options are confidential and help us understand how small businesses operate across America.
           </p>
 
-          {/* Three-column layout */}
-          <div className="grid md:grid-cols-[1fr_2fr] gap-10 items-start">
-            {/* Left Column - Business Owners Collage */}
-            <div className="flex justify-center">
-              <img
-                src={businessCollage}
-                alt="Diverse group of small business owners from various industries including retail, restaurants, and services"
-                className="w-full max-w-[400px] h-auto rounded-xl shadow-lg dark:shadow-none"
-                data-testid="img-business-collage"
-              />
-            </div>
+          {/* CTA Buttons - Hero Style */}
+          <div className="flex flex-wrap justify-center gap-3">
+            <a
+              href="/survey"
+              className="flex flex-col items-center justify-center rounded-md bg-[#00152a] text-white px-[11px] py-4 flex-1 min-w-[200px] max-w-[300px] hover:bg-[#000d1a] transition-all duration-200 cursor-pointer"
+              data-testid="button-survey-join-section"
+            >
+              <span className="text-[16px] font-bold leading-tight text-center">Fill out 5-minute Survey</span>
+              <span className="text-xs opacity-[0.72] text-center">Quick $20 Amazon/Zelle Reward</span>
+            </a>
 
-            {/* Right Column - Two options side by side */}
-            <div className="grid md:grid-cols-2 gap-8">
-              {/* Survey Option */}
-              <div className="space-y-6">
-                <h3 className="text-xl font-bold text-neutral-900 dark:text-neutral-100">Quick Survey</h3>
-                <div className="space-y-3 text-sm text-neutral-600 dark:text-neutral-300">
-                  <div className="flex items-center gap-2">
-                    <span>✓</span>
-                    <span>5 minutes online</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <span>✓</span>
-                    <span>Fill out at your convenience</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <span>✓</span>
-                    <span>$20 Amazon/Zelle reward</span>
-                  </div>
-                </div>
-
-                <a
-                  href="/survey"
-                  className="inline-flex items-center gap-1.5 justify-center rounded-md bg-[#00152a] text-white px-4 py-2.5 text-sm font-bold hover:bg-[#000d1a] transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#00152a]"
-                  data-testid="button-survey-join-section"
-                >
-                  <span>Take 5-min Survey</span>
-                  <ArrowRight className="w-4 h-4" />
-                </a>
-              </div>
-
-              {/* Interview Option */}
-              <div className="space-y-6">
-                <h3 className="text-xl font-bold text-neutral-900 dark:text-neutral-100">In-Depth Interview</h3>
-                <div className="space-y-3 text-sm text-neutral-600 dark:text-neutral-300">
-                  <div className="flex items-center gap-2">
-                    <span>✓</span>
-                    <span>60-minute conversation</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <span>✓</span>
-                    <span>Remote via Zoom</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <span>✓</span>
-                    <span>$150 thank-you after interview</span>
-                  </div>
-                </div>
-
-                <a
-                  href="/join"
-                  className="inline-flex items-center gap-1.5 justify-center rounded-md border-2 border-[#00152a] text-[#00152a] px-4 py-2.5 text-sm font-bold hover:bg-[#00152a] hover:text-white transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#00152a] focus-visible:ring-offset-2"
-                  data-testid="button-join-section"
-                >
-                  <span>Schedule Interview</span>
-                  <ArrowRight className="w-4 h-4" />
-                </a>
-              </div>
-            </div>
+            <a
+              href="/join"
+              className="flex flex-col items-center justify-center rounded-md border border-[#00152a] text-[#00152a] px-[11px] py-4 flex-1 min-w-[200px] max-w-[300px] hover:bg-neutral-100 transition-all duration-200 cursor-pointer"
+              data-testid="button-join-section"
+            >
+              <span className="text-[16px] font-bold leading-tight text-center">Schedule 60-minute Zoom</span>
+              <span className="text-xs opacity-[0.72] text-center">$150 compensation</span>
+            </a>
           </div>
         </div>
       </section>
