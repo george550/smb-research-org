@@ -18,7 +18,8 @@
   "routes": [
     {
       "src": "/api/(.*)",
-      "dest": "/api/$1"
+      "dest": "/api/$1",
+      "continue": true
     },
     {
       "handle": "filesystem"
@@ -26,6 +27,19 @@
     {
       "src": "/(.*)",
       "dest": "/index.html"
+    }
+  ],
+  "redirects": [
+    {
+      "source": "/:path((?!api).*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "smb-research.org"
+        }
+      ],
+      "destination": "https://www.smb-research.org/:path*",
+      "permanent": true
     }
   ]
 }
