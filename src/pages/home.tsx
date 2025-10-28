@@ -124,7 +124,7 @@ export default function Home() {
               src={amexDesktopImage}
               alt="Small business owner collaborating outdoors"
               className="block w-full md:h-full md:object-cover h-auto md:scale-110 scale-[1.20]"
-              style={{transformOrigin: 'top center'}}
+              style={{transformOrigin: 'center center'}}
             />
           </picture>
         </div>
