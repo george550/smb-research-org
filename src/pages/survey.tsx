@@ -706,17 +706,6 @@ export default function Survey() {
                     {showStep3Errors && errors.comfortableDiscussing && <p className="text-sm text-red-500">{errors.comfortableDiscussing}</p>}
                   </div>
 
-                  <div className="space-y-2">
-                    <Label htmlFor="referralSource" className="text-base font-semibold text-left dark:text-white">Who referred you/how did you find out about the research? <span className="text-neutral-400 font-normal">(optional)</span></Label>
-                    <div className="relative">
-                      <Input id="referralSource" value={formData.referralSource} onChange={(e) => handleInputChange("referralSource", e.target.value)} placeholder="e.g. Friend, LinkedIn, flyer, etc." />
-                      {formData.referralSource && formData.referralSource.length > 0 && (
-                        <span className="absolute right-3 top-1/2 -translate-y-1/2 w-5 h-5 bg-green-600 rounded-full flex items-center justify-center">
-                          <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M10 3L4.5 8.5L2 6" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
-                        </span>
-                      )}
-                    </div>
-                  </div>
                 </div>
               )}
 
