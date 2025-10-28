@@ -110,7 +110,7 @@ export default function Home() {
 
       <section id="top" className="relative overflow-hidden">
         {/* Background Image - positioned to show faces in upper area */}
-        <div className="absolute md:left-[50px] md:top-0 -top-[100px] left-0 w-full md:h-full h-auto z-0">
+        <div className="absolute md:left-[50px] md:top-0 min-[450px]:-top-[100px] -top-[50px] left-0 w-full md:h-full h-auto z-0">
           <picture className="block w-full h-full">
             <source
               media="(max-width: 767px)"
@@ -138,16 +138,16 @@ export default function Home() {
             </svg>
           </div>
 
-          {/* Tablet: curved shape from left, wider coverage */}
-          <div className="hidden md:block lg:hidden absolute inset-0">
+          {/* Tablet: curved shape from left, wider coverage - extended to 1024px */}
+          <div className="hidden md:block min-[1200px]:hidden absolute inset-0">
             <svg viewBox="0 0 100 100" preserveAspectRatio="none" className="absolute inset-0 w-full h-full">
               <path d="M 0,0 L 0,100 L 65,100 Q 75,50 65,0 Z" fill="#006fcf" />
             </svg>
           </div>
 
-          {/* Desktop: curved shape from left, narrower */}
-          <div className="hidden lg:block absolute inset-0">
-            <svg viewBox="0 0 100 100" preserveAspectRatio="none" className="absolute inset-0 w-full h-full">
+          {/* Desktop: curved shape from left, pushed right 100px - starts at 1200px */}
+          <div className="hidden min-[1200px]:block absolute inset-0">
+            <svg viewBox="0 0 100 100" preserveAspectRatio="none" className="absolute inset-0 w-full h-full" style={{transform: 'translateX(100px)'}}>
               <path d="M 0,0 L 0,100 L 45,100 Q 55,50 45,0 Z" fill="#006fcf" />
             </svg>
           </div>
@@ -188,24 +188,35 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Tablet Layout */}
-          <div className="hidden md:block lg:hidden min-h-[500px] px-8 py-12">
+          {/* Tablet Layout - now extends to 1024px with both buttons */}
+          <div className="hidden md:block min-[1200px]:hidden min-h-[500px] px-8 py-12">
             <div className="flex items-center h-full">
-              <div className="max-w-[480px] space-y-6">
-                <h1 className="text-[2rem] leading-[1.15] font-medium text-white uppercase" style={{fontFamily: "'Inter Tight', sans-serif", letterSpacing: '-0.02em'}} data-testid="text-hero-title">
+              <div className="max-w-[520px]">
+                <h1 className="text-[2rem] leading-[1.15] font-medium text-white uppercase mb-6" style={{fontFamily: "'Inter Tight', sans-serif", letterSpacing: '-0.02em'}} data-testid="text-hero-title">
                   Share your story as a business owner
                 </h1>
-                <p className="text-white text-lg leading-relaxed font-normal" data-testid="text-hero-description">
+                <p className="text-white text-lg leading-relaxed font-normal mb-6" data-testid="text-hero-description">
                   Tell us about running your business—the wins, the challenges, and everything in between. 5-minute survey ($20) or 60-minute interview ($150). Ready to share your insights?
                 </p>
-                <a
-                  href="/survey"
-                  className="inline-flex items-center justify-center gap-2 rounded-md bg-[#00152a] text-white px-10 py-4 text-lg font-semibold hover:bg-[#000d1a] transition-all duration-200"
-                  data-testid="button-survey-hero"
-                >
-                  <span>Take Survey</span>
-                  <ArrowRight className="w-5 h-5" />
-                </a>
+                <div className="flex gap-3 mb-4">
+                  <a
+                    href="/survey"
+                    className="flex flex-col items-center justify-center rounded-md bg-[#00152a] text-white px-[11px] py-4 flex-1 hover:bg-[#000d1a] transition-all duration-200"
+                    data-testid="button-survey-hero"
+                  >
+                    <span className="text-[16px] font-bold leading-tight text-center">Fill out 5-minute Survey</span>
+                    <span className="text-xs opacity-[0.72] text-center">Quick $20 Amazon/Zelle Reward</span>
+                  </a>
+
+                  <a
+                    href="/join"
+                    className="flex flex-col items-center justify-center rounded-md border border-white/80 text-white px-[11px] py-4 flex-1 hover:bg-white/10 transition-all duration-200"
+                    data-testid="button-join-hero"
+                  >
+                    <span className="text-[16px] font-bold leading-tight text-center">Schedule 60-minute Zoom</span>
+                    <span className="text-xs opacity-[0.72] text-center">$150 compensation</span>
+                  </a>
+                </div>
                 <p className="text-sm text-white/95 font-normal" data-testid="text-hero-details">
                   $20 or $150 compensation · Confidential & nationwide
                 </p>
@@ -213,8 +224,8 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Desktop Layout */}
-          <div className="hidden lg:block min-h-[550px] px-16 py-16">
+          {/* Desktop Layout - starts at 1200px with blue background pushed right */}
+          <div className="hidden min-[1200px]:block min-h-[550px] px-16 py-16">
             <div className="flex items-center h-full">
               <div className="max-w-[520px]">
                 <h1 className="text-[2.9375rem] leading-[1.15] font-medium text-white uppercase max-w-[380px] pt-[30px] mb-[19px]" style={{fontFamily: "'Inter Tight', sans-serif", letterSpacing: '-0.02em'}} data-testid="text-hero-title">
