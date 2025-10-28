@@ -9,7 +9,6 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { useToast } from "@/hooks/use-toast";
 import { useMutation } from "@tanstack/react-query";
 import { Loader2, Clock, MessageCircle, DollarSign, Mail } from "lucide-react";
-import { ThemeToggle } from "@/components/ThemeToggle";
 import footerFlag from "@assets/us-flag-footer.svg";
 
 const roleOptions = ["I own the business", "I manage operations or finances", "I'm an employee, not involved in payments", "I'm self-employed or freelance only"];
@@ -402,9 +401,6 @@ export default function Survey() {
               <span className="hidden md:inline text-neutral-500 dark:text-neutral-400"> ($20 reward)</span>
             </span>
           </a>
-          <div className="hidden md:flex">
-            <ThemeToggle />
-          </div>
         </div>
 
         <div className="mx-auto max-w-4xl px-4 pb-3">

@@ -2,7 +2,6 @@ import { useEffect } from "react";
 import { useLocation } from "wouter";
 import { CheckCircle, FileCheck, Calendar, DollarSign, Share2, Mail, Phone } from "lucide-react";
 import { apiRequest, queryClient } from "@/lib/queryClient";
-import { ThemeToggle } from "@/components/ThemeToggle";
 import footerFlag from "@assets/us-flag-footer.svg";
 
 export default function ThankYou() {
@@ -33,9 +32,6 @@ export default function ThankYou() {
 
   return (
     <div className="min-h-screen bg-white dark:bg-neutral-900 text-neutral-900 dark:text-neutral-100 flex flex-col">
-      <div className="absolute top-4 right-4 z-10">
-        <ThemeToggle />
-      </div>
       <div className="flex-1 flex items-center justify-center p-4">
         <div className="max-w-2xl w-full text-center space-y-8">
         <div className="relative">

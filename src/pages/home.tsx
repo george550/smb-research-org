@@ -3,7 +3,6 @@ import { Clock, MessageCircle, DollarSign, Quote, ArrowRight, Share2, Mail, Phon
 import { useQuery } from "@tanstack/react-query";
 import type { Testimonial } from "@shared/schema";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { ThemeToggle } from "@/components/ThemeToggle";
 import logo from "@assets/us-flag.svg";
 import footerFlag from "@assets/us-flag-footer.svg";
 import headerImage from "@assets/header.jpg";
@@ -100,9 +99,6 @@ export default function Home() {
                 <span className="hidden md:inline">Schedule 60-min Zoom</span>
                 <span className="md:hidden">Zoom</span>
               </a>
-              <div className="hidden lg:block">
-                <ThemeToggle />
-              </div>
             </div>
           </div>
         </div>
@@ -185,7 +181,7 @@ export default function Home() {
 
                 <a
                   href="/join"
-                  className="flex flex-col items-center justify-center rounded-md border border-white/80 text-white px-[11px] py-4 flex-1 hover:bg-white/10 transition-all duration-200"
+                  className="flex flex-col items-center justify-center rounded-md border border-white/80 text-white px-[11px] py-4 flex-1 hover:bg-[#00152a] hover:border-[#00152a] transition-all duration-200"
                   data-testid="button-join-hero"
                 >
                   <span className="text-[16px] font-bold leading-tight text-center">Schedule 60-minute Zoom</span>
@@ -265,13 +261,6 @@ export default function Home() {
                 </p>
               </div>
             </div>
-          </div>
-        </div>
-
-        {/* Badge in top right corner - Desktop only */}
-        <div className="absolute top-6 right-6 z-30 hidden lg:block">
-          <div className="bg-white rounded-lg p-3 shadow-xl">
-            <img src={logo} alt="US Small Business Study" className="h-12 w-12 object-contain" />
           </div>
         </div>
       </section>
@@ -433,7 +422,7 @@ export default function Home() {
 
             <a
               href="/join"
-              className="flex flex-col items-center justify-center rounded-md border border-[#00152a] text-[#00152a] px-[11px] py-4 flex-1 min-w-[200px] max-w-[300px] hover:bg-neutral-100 transition-all duration-200 cursor-pointer"
+              className="flex flex-col items-center justify-center rounded-md border border-[#00152a] text-[#00152a] px-[11px] py-4 flex-1 min-w-[200px] max-w-[300px] hover:bg-[#00152a] hover:text-white transition-all duration-200 cursor-pointer"
               data-testid="button-join-section"
             >
               <span className="text-[16px] font-bold leading-tight text-center">Schedule 60-minute Zoom</span>
